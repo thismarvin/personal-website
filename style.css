@@ -9,7 +9,6 @@ html {
 body {
     display: table-cell;
     vertical-align: middle;
-    margin: auto;
     background-color: black;
 }
 
@@ -29,4 +28,24 @@ h3 {
 h1 {
     font-size: 4em;
     margin-top: 0em;
+}
+
+@media only screen and (max-device-width : 800px) {
+    html {
+        padding-left: 6.9%;
+        padding-right: 6.9%;
+    }
+
+    body {
+        padding-top: 20%;
+        padding-bottom: 20%;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
 }
