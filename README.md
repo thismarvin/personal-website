@@ -2,7 +2,7 @@
 
  a static website all about me and my projects that's deployed with the help of [Netlify](https://www.netlify.com/) ❤
 
- Check out the website in all of its glory at [www.thismarvin.com](https://www.thismarvin.com)
+ Check out the website in all of its glory at [thismarvin.com](https://www.thismarvin.com)
 
 ## Status
 
