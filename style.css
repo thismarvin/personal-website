@@ -1,0 +1,32 @@
+html {
+    display: table;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    margin: auto;
+    background-color: black;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 18px;
+    color: white;
+    text-align: left;
+}
+
+h3 {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: 4em;
+    margin-top: 0em;
+}
