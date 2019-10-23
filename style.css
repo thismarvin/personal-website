@@ -1,15 +1,10 @@
-html {
-    display: table;
+html, body {
+    margin: 0;
     height: 100%;
-    margin: 0 auto;
-    padding-left: 10%;
-    padding-right: 10%;
 }
 
 body {
-    display: table-cell;
-    vertical-align: middle;
-    background-color: black;
+    background: black;
 }
 
 * {
@@ -28,24 +23,90 @@ h3 {
 h1 {
     font-size: 4em;
     margin-top: 0em;
+    margin-bottom: 0em;
 }
 
-@media only screen and (max-device-width : 800px) {
-    html {
+.landing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(180deg, #FF00A8 -17.22%, rgba(255, 255, 255, 0) 114.81%), #FF004D;
+}
+
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.navigation {
+    height: 50px;
+    z-index: 1;
+}
+
+.navigation > h3 {
+    margin: 0 auto;
+    padding-top: 1em;
+    padding-left: 1em;
+}
+
+.container {
+    display: table;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.landing-text {
+    display: table-cell;
+    padding-top: 20%;
+}
+
+.projects {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.projects-text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(50, 50, 50);
+    border-radius: 10px;
+}
+
+@media only screen and (max-device-width : 796px) {
+    body {
         padding-left: 6.9%;
         padding-right: 6.9%;
     }
 
-    body {
-        padding-top: 20%;
-        padding-bottom: 20%;
-    }
-
     h3 {
-        font-size: 1.5em;
+        font-size: 1em;
     }
     
     h1 {
-        font-size: 2em;
+        font-size: 1.8em;
+    }
+
+    .landing-text {
+        padding-top: 80%;
     }
 }
