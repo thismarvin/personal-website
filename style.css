@@ -9,7 +9,6 @@ body {
 
 * {
     font-family: 'Roboto', sans-serif;
-    -webkit-font-smoothing: antialiased;
     font-size: 18px;
     color: white;
     text-align: left;
@@ -107,6 +106,6 @@ h1 {
     }
 
     .landing-text {
-        padding-top: 80%;
+        padding-top: 70%;
     }
 }
