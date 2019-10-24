@@ -23,7 +23,7 @@ export default class Wave {
                 noiseStep = 0.002;
                 noiseWidth = 0.2;
                 waveOffset = 0;
-                waveStep = 0.001;
+                waveStep = 0.002;
             };
 
             p5.draw = function () {
@@ -47,7 +47,7 @@ export default class Wave {
                     //y = p5.height * 0.70 + noiseValue - instance.yOffset;
 
                     noiseValue = p5.noise(p5.map(x, 0, p5.width + 5, 0, noiseWidth) + noiseOffset);
-                    noiseValue = p5.sin(p5.map(x, 0, p5.width + 5, 0, p5.PI / 2) + waveOffset + noiseValue);                    
+                    noiseValue = p5.sin(p5.map(x, 0, p5.width + 5, 0, p5.PI / 2 + noiseValue) + waveOffset + noiseValue * 5);                    
                     noiseValue *= p5.height * 0.10;
                     y = p5.height * 0.80 + noiseValue - instance.yOffset;
 
