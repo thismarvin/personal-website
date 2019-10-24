@@ -77,7 +77,7 @@ export default class Wave {
     handleScroll() {
         const delta = this.previousY - window.pageYOffset;
 
-        this.yOffset -= delta * 0.5;
+        this.yOffset -= delta * 0.25;
         this.yOffset = this.yOffset > 300 ? 300 : this.yOffset;
         this.yOffset = this.yOffset < 0 ? 0 : this.yOffset;
 
