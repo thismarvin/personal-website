@@ -70,7 +70,7 @@ export default class Wave {
         let myp5 = new p5(sketch, divId);
 
         window.addEventListener("scroll", () => {
-            this.handleScroll();
+            // this.handleScroll();
         });
     }
 
