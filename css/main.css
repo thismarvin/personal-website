@@ -101,15 +101,23 @@ h3 {
 }
 
 .projects #entry-three.project-entry {
-  background: #BD00FF;
+  background: black;
 }
 
 .projects #entry-three.project-entry .project-preview > i {
+  color: black;
+}
+
+.projects #entry-four.project-entry {
+  background: #BD00FF;
+}
+
+.projects #entry-four.project-entry .project-preview > i {
   color: #BD00FF;
 }
 
 .projects .project-entry {
-  padding: 5% 0 10% 0;
+  padding: 5% 0 0 0;
 }
 
 .projects .project-entry h2 {
@@ -164,6 +172,13 @@ h3 {
 
 .projects .project-entry .project-link a {
   text-decoration: none;
+}
+
+.projects .project-entry .wave {
+  width: 100%;
+  height: 10vh;
+  position: block;
+  z-index: 1;
 }
 
 .projects .project-entry hr {
