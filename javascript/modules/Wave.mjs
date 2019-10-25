@@ -1,10 +1,19 @@
 export default class Wave {
-    constructor(divId) {
+    /**    
+    * Attaches a canvas that has a neat wave animation to a given element id.
+    * Stay wavy 🌊🌊🌊. 
+    * @param id the id of the element that you want to attach the Wave to
+    * @param startOffset a perctange (represented as a decimal) that reprsents the start of the wave 
+    * @param span a perctange (represented as a decimal) of how far the wave should span up and down
+    * @param color the color of the wave
+    */
+    constructor(id, startOffset, span, color) {
 
-        this.yOffset = 0;
-        this.previousY = 0;
+        this.waveStartOffset = startOffset;
+        this.waveHeight = span;
+        this.waveColor = color;
 
-        const attachedDiv = document.querySelector(`.${divId}`);
+        const attachedDiv = document.querySelector(`#${id}`);
         const instance = this;
         const sketch = (p5) => {
 
@@ -14,42 +23,53 @@ export default class Wave {
             let noiseWidth;
             let waveOffset;
             let waveStep;
+            let maxAngle;
 
             p5.setup = function () {
                 myCanvas = p5.createCanvas(attachedDiv.clientWidth, attachedDiv.clientHeight * 1.05);
                 myCanvas.parent(attachedDiv);
 
-                noiseOffset = 0;    
-                noiseStep = 0.002;
+                noiseOffset = p5.random() * p5.TWO_PI;
+                noiseStep = 0.002 + p5.int(p5.random() * 0.003);
                 noiseWidth = 0.2;
-                waveOffset = 0;
-                waveStep = 0.002;
+                waveOffset = p5.random() * p5.TWO_PI;
+                waveStep = 0.002 + p5.int(p5.random() * 0.003);
+                maxAngle = p5.random() * p5.PI;
+
+                if (id === "wave-landing"){                    
+                    noiseOffset = 0;
+                    noiseStep = 0.002;
+                    noiseWidth = 0.2;
+                    waveOffset = 0;
+                    waveStep = 0.002;
+                    maxAngle = p5.PI / 2;
+                }                   
             };
 
             p5.draw = function () {
+                // Only update if within view.
+                if (!(
+                    attachedDiv.offsetTop < window.scrollY + window.innerHeight &&
+                    attachedDiv.offsetTop + attachedDiv.clientHeight > window.scrollY
+                    )) {
+                    return;
+                }
+
                 p5.clear();
 
                 p5.beginShape();
-                p5.fill(0);
+                p5.fill(instance.waveColor);
                 p5.noStroke();
                 
                 let noiseValue;
                 let y;
 
                 for (let x = 0; x < p5.width + 5; x++) {
-                    //noiseValue = p5.noise(p5.map(x, 0, p5.width + 5, 0, noiseWidth) + noiseOffset);
-                    //noiseValue *= p5.height * 0.40;
-                    //y = p5.height * 0.50 + noiseValue - instance.yOffset;
-
-                    //noiseValue = p5.noise(p5.map(x, 0, p5.width + 5, 0, noiseWidth) + noiseOffset);
-                    //noiseValue = p5.sin(noiseValue * p5.TWO_PI);                    
-                    //noiseValue *= p5.height * 0.10;
-                    //y = p5.height * 0.70 + noiseValue - instance.yOffset;
-
                     noiseValue = p5.noise(p5.map(x, 0, p5.width + 5, 0, noiseWidth) + noiseOffset);
-                    noiseValue = p5.sin(p5.map(x, 0, p5.width + 5, 0, p5.PI / 2 + noiseValue) + waveOffset + noiseValue * 5);                    
-                    noiseValue *= p5.height * 0.10;
-                    y = p5.height * 0.80 + noiseValue - instance.yOffset;
+                    noiseValue = p5.sin(p5.map(x, 0, p5.width + 5, 0, maxAngle + noiseValue) + waveOffset + noiseValue * 5);                    
+                    noiseValue *= p5.height * instance.waveHeight;
+
+                    y = p5.height * instance.waveStartOffset + noiseValue;
 
                     p5.vertex(x, y);
                 }
@@ -67,20 +87,6 @@ export default class Wave {
             }
         };
 
-        let myp5 = new p5(sketch, divId);
-
-        window.addEventListener("scroll", () => {
-            // this.handleScroll();
-        });
-    }
-
-    handleScroll() {
-        const delta = this.previousY - window.pageYOffset;
-
-        this.yOffset -= delta * 0.25;
-        this.yOffset = this.yOffset > 300 ? 300 : this.yOffset;
-        this.yOffset = this.yOffset < 0 ? 0 : this.yOffset;
-
-        this.previousY = window.pageYOffset;
+        let myp5 = new p5(sketch, id);
     }
 }
