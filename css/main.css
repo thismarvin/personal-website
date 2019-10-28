@@ -25,12 +25,48 @@ h1 {
   font-size: 10vw;
 }
 
+@media (min-width: 768px) {
+  h1 {
+    font-size: 8vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3vw;
+  }
+}
+
 h2 {
   font-size: 8vw;
 }
 
+@media (min-width: 768px) {
+  h2 {
+    font-size: 6vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 2.25vw;
+  }
+}
+
 h3 {
   font-size: 4vw;
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  h3 {
+    font-size: 1.5vw;
+  }
 }
 
 p {
@@ -38,10 +74,28 @@ p {
   font-size: 6vw;
 }
 
+@media (min-width: 768px) {
+  p {
+    font-size: 4vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  p {
+    font-size: 1.5vw;
+  }
+}
+
 .button {
   background-color: transparent;
   border: 0.5vw solid white;
   border-radius: 6vw;
+}
+
+@media (min-width: 1024px) {
+  .button {
+    border: 0.25vw solid white;
+  }
 }
 
 .button a {
@@ -60,8 +114,20 @@ p {
   font-weight: bold;
   color: white;
   margin: 0;
-  padding: 0.75em  0.5em;
+  padding: 0.75em 0.5em;
   line-height: 1em;
+}
+
+@media (min-width: 768px) {
+  .button a span {
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .button a span {
+    font-size: 1em;
+  }
 }
 
 .landing {
@@ -75,11 +141,29 @@ p {
   padding: 5% 5% 0 5%;
 }
 
+@media (min-width: 1024px) {
+  .landing nav {
+    padding: 2vw 2vw;
+  }
+}
+
 .landing nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 5vw;
+}
+
+@media (min-width: 768px) {
+  .landing nav a {
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing nav a {
+    font-size: 1.5vw;
+  }
 }
 
 .landing main {
@@ -92,10 +176,39 @@ p {
   font-family: 'Prabowow', sans-serif;
   margin: 0;
   font-size: 16vw;
+  padding: 0 0 0 3%;
+}
+
+@media (min-width: 1024px) {
+  .landing main h1 {
+    font-size: 5vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing main {
+    line-height: 4.5vw;
+    padding: 0 0 0 0;
+    margin: -2vw auto 0 auto;
+    max-width: 30%;
+  }
+  .landing main .button {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  .landing main p {
+    text-align: center;
+  }
 }
 
 .landing .developer {
   font-size: 17vw;
+}
+
+@media (min-width: 1024px) {
+  .landing .developer {
+    font-size: 6vw;
+  }
 }
 
 .landing .wave {
@@ -113,20 +226,30 @@ p {
   margin: 5% 5% 0 5%;
 }
 
-.projects #entry-one.project-entry, .projects #entry-three.project-entry {
+@media (min-width: 1024px) {
+  .projects h1 {
+    text-align: center;
+  }
+}
+
+.projects #entry-one.project-entry,
+.projects #entry-three.project-entry {
   background: black;
 }
 
-.projects #entry-one.project-entry .project-preview > i, .projects #entry-three.project-entry .project-preview > i {
+.projects #entry-one.project-entry .project-preview > i,
+.projects #entry-three.project-entry .project-preview > i {
   color: black;
 }
 
-.projects #entry-two.project-entry, .projects #entry-four.project-entry {
+.projects #entry-two.project-entry,
+.projects #entry-four.project-entry {
   background: -webkit-gradient(linear, left top, left bottom, from(#FF004D), to(#BD00FF));
   background: linear-gradient(#FF004D, #BD00FF);
 }
 
-.projects #entry-two.project-entry .project-preview > i, .projects #entry-four.project-entry .project-preview > i {
+.projects #entry-two.project-entry .project-preview > i,
+.projects #entry-four.project-entry .project-preview > i {
   color: linear-gradient(#FF004D, #BD00FF);
 }
 
@@ -134,21 +257,61 @@ p {
   padding: 5% 0 0 0;
 }
 
+@media (min-width: 1024px) {
+  .projects .project-entry {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "preview title" "preview info" "preview button" "preview ." "wave wave";
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects .project-entry .title {
+    grid-area: title;
+  }
+}
+
 .projects .project-entry h2 {
   margin: 0 5% 5% 5%;
+}
+
+@media (min-width: 1024px) {
+  .projects .project-entry h2 {
+    margin: 0;
+  }
 }
 
 .projects .project-entry h3 {
   margin: 0 5%;
 }
 
+@media (min-width: 1024px) {
+  .projects .project-entry h3 {
+    margin: 0;
+  }
+}
+
 .projects .project-entry p {
   padding: 5%;
+}
+
+@media (min-width: 1024px) {
+  .projects .project-entry p {
+    grid-area: info;
+    padding: 0 20% 0 0;
+  }
 }
 
 .projects .project-entry .project-preview {
   display: table;
   margin: 0 5%;
+}
+
+@media (min-width: 1024px) {
+  .projects .project-entry .project-preview {
+    grid-area: preview;
+    margin: 0;
+  }
 }
 
 .projects .project-entry .project-preview img {
@@ -158,9 +321,27 @@ p {
   vertical-align: middle;
 }
 
+@media (min-width: 1024px) {
+  .projects .project-entry .project-preview img {
+    width: 35vw;
+    padding: 0 10% 5% 20%;
+  }
+}
+
 .projects .project-entry .button {
   width: 89vw;
   margin: 0 auto 3vw auto;
+}
+
+@media (min-width: 1024px) {
+  .projects .project-entry .button {
+    grid-area: button;
+    padding: 0;
+    margin: 0 5vw 0 0;
+    width: 17vw;
+    float: left;
+    margin: 0 1vw 0 0;
+  }
 }
 
 .projects .project-entry .wave {
@@ -168,6 +349,12 @@ p {
   height: 10vh;
   position: block;
   z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .projects .project-entry .wave {
+    grid-area: wave;
+  }
 }
 
 .footer {
@@ -184,6 +371,18 @@ p {
 .footer footer span {
   font-size: 4vw;
   color: #A6ACCD;
+}
+
+@media (min-width: 768px) {
+  .footer footer span {
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer footer span {
+    font-size: 1.5vw;
+  }
 }
 
 .footer footer .blue {
@@ -213,8 +412,9 @@ p {
 
 .footer footer ul {
   list-style: none;
-  margin: 0;
   padding: 0 5%;
+  max-width: 35%;
+  margin: 0 auto;
 }
 
 .footer footer a {
