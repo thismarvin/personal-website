@@ -31,9 +31,9 @@ h1 {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   h1 {
-    font-size: 3vw;
+    font-size: 3em;
   }
 }
 
@@ -47,9 +47,9 @@ h2 {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   h2 {
-    font-size: 2.25vw;
+    font-size: 2.25em;
   }
 }
 
@@ -63,9 +63,9 @@ h3 {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   h3 {
-    font-size: 1.5vw;
+    font-size: 1.5em;
   }
 }
 
@@ -80,9 +80,9 @@ p {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   p {
-    font-size: 1.5vw;
+    font-size: 1em;
   }
 }
 
@@ -92,9 +92,9 @@ p {
   border-radius: 6vw;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .button {
-    border: 0.25vw solid white;
+    border: 0.1em solid white;
   }
 }
 
@@ -124,7 +124,7 @@ p {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .button a span {
     font-size: 1em;
   }
@@ -141,9 +141,9 @@ p {
   padding: 5% 5% 0 5%;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .landing nav {
-    padding: 2vw 2vw;
+    padding: 50px;
   }
 }
 
@@ -160,9 +160,9 @@ p {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .landing nav a {
-    font-size: 1.5vw;
+    font-size: 1.5em;
   }
 }
 
@@ -179,18 +179,20 @@ p {
   padding: 0 0 0 3%;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .landing main h1 {
-    font-size: 5vw;
+    font-size: 5em;
+    line-height: 0.8em;
+    padding: 0;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .landing main {
     line-height: 4.5vw;
     padding: 0 0 0 0;
     margin: -2vw auto 0 auto;
-    max-width: 30%;
+    max-width: 440px;
   }
   .landing main .button {
     max-width: 200px;
@@ -205,9 +207,9 @@ p {
   font-size: 17vw;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .landing .developer {
-    font-size: 6vw;
+    font-size: 5.25em;
   }
 }
 
@@ -226,46 +228,56 @@ p {
   margin: 5% 5% 0 5%;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .projects h1 {
     text-align: center;
   }
 }
 
-.projects #entry-one.project-entry,
-.projects #entry-three.project-entry {
-  background: black;
-}
-
-.projects #entry-one.project-entry .project-preview > i,
-.projects #entry-three.project-entry .project-preview > i {
-  color: black;
-}
-
-.projects #entry-two.project-entry,
-.projects #entry-four.project-entry {
+.projects .container-entry {
   background: -webkit-gradient(linear, left top, left bottom, from(#FF004D), to(#BD00FF));
   background: linear-gradient(#FF004D, #BD00FF);
 }
 
-.projects #entry-two.project-entry .project-preview > i,
-.projects #entry-four.project-entry .project-preview > i {
-  color: linear-gradient(#FF004D, #BD00FF);
+.projects .container-entry.black {
+  background: black;
+}
+
+.projects .container-entry .wave {
+  width: 100%;
+  height: 10vh;
+  position: block;
+  z-index: 1;
+}
+
+@media (min-width: 950px) {
+  .projects .container-entry .wave {
+    height: 100px;
+    display: float;
+  }
 }
 
 .projects .project-entry {
   padding: 5% 0 0 0;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .projects .project-entry {
     display: -ms-grid;
     display: grid;
-        grid-template-areas: "preview title" "preview info" "preview button" "preview ." "wave wave";
+        grid-template-areas: "preview title" "preview info" "preview button";
+    margin: 0;
+    padding: 2em calc((100% - 960px) / 2) 0;
+    width: 900px;
+    height: 375px;
+    -ms-grid-columns: 500px 400px;
+        grid-template-columns: 500px 400px;
+    -ms-grid-rows: 100px 175px 100px;
+        grid-template-rows: 100px 175px 100px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .projects .project-entry .title {
     grid-area: title;
   }
@@ -275,9 +287,10 @@ p {
   margin: 0 5% 5% 5%;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .projects .project-entry h2 {
     margin: 0;
+    padding: 0;
   }
 }
 
@@ -285,9 +298,10 @@ p {
   margin: 0 5%;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .projects .project-entry h3 {
     margin: 0;
+    padding: 0;
   }
 }
 
@@ -295,10 +309,13 @@ p {
   padding: 5%;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .projects .project-entry p {
     grid-area: info;
-    padding: 0 20% 0 0;
+    display: inline-block;
+    width: 400px;
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -307,9 +324,10 @@ p {
   margin: 0 5%;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .projects .project-entry .project-preview {
     grid-area: preview;
+    padding: 0;
     margin: 0;
   }
 }
@@ -321,10 +339,11 @@ p {
   vertical-align: middle;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .projects .project-entry .project-preview img {
-    width: 35vw;
-    padding: 0 10% 5% 20%;
+    width: calc(100% - 100px);
+    padding: 50px;
+    margin: 0 0 0 0;
   }
 }
 
@@ -333,33 +352,29 @@ p {
   margin: 0 auto 3vw auto;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .projects .project-entry .button {
     grid-area: button;
     padding: 0;
-    margin: 0 5vw 0 0;
-    width: 17vw;
+    margin: 0 0.7em 0 0;
+    width: 9em;
+    height: 2em;
     float: left;
-    margin: 0 1vw 0 0;
   }
-}
-
-.projects .project-entry .wave {
-  width: 100%;
-  height: 10vh;
-  position: block;
-  z-index: 1;
-}
-
-@media (min-width: 1024px) {
-  .projects .project-entry .wave {
-    grid-area: wave;
+  .projects .project-entry .button span {
+    font-size: 0.8em;
   }
 }
 
 .footer {
   background-color: black;
   padding: 10% 0 10% 0;
+}
+
+@media (min-width: 950px) {
+  .footer {
+    padding: 5em 0;
+  }
 }
 
 .footer footer {
@@ -379,9 +394,9 @@ p {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .footer footer span {
-    font-size: 1.5vw;
+    font-size: 1.25em;
   }
 }
 
@@ -413,12 +428,23 @@ p {
 .footer footer ul {
   list-style: none;
   padding: 0 5%;
-  max-width: 35%;
-  margin: 0 auto;
+}
+
+@media (min-width: 950px) {
+  .footer footer ul {
+    width: 600px;
+    margin: 0 auto;
+  }
 }
 
 .footer footer a {
   text-decoration: none;
   color: white;
+}
+
+@media (min-width: 950px) {
+  .footer footer a {
+    font-size: 0.75em;
+  }
 }
 /*# sourceMappingURL=main.css.map */
