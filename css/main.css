@@ -22,21 +22,26 @@ body {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 10vw;
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 8vw;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 4vw;
+}
+
+p {
+  line-height: 1.1em;
+  font-size: 6vw;
 }
 
 .button {
   background-color: transparent;
   border: 0.5vw solid white;
-  border-radius: 1em;
+  border-radius: 6vw;
 }
 
 .button a {
@@ -51,7 +56,7 @@ h3 {
   vertical-align: middle;
   text-align: center;
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: 5vw;
   font-weight: bold;
   color: white;
   margin: 0;
@@ -74,12 +79,7 @@ h3 {
   color: white;
   text-decoration: none;
   font-weight: bold;
-}
-
-@media (min-width: 800px) {
-  .landing nav {
-    margin: 50px 50px 0 50px;
-  }
+  font-size: 5vw;
 }
 
 .landing main {
@@ -92,11 +92,6 @@ h3 {
   font-family: 'Prabowow', sans-serif;
   margin: 0;
   font-size: 16vw;
-}
-
-.landing main p {
-  line-height: 1.1em;
-  font-size: 1.15em;
 }
 
 .landing .developer {
@@ -144,7 +139,6 @@ h3 {
 }
 
 .projects .project-entry h3 {
-  font-size: 1em;
   margin: 0 5%;
 }
 
@@ -166,7 +160,7 @@ h3 {
 
 .projects .project-entry .button {
   width: 89vw;
-  margin: 0 auto 0.5em auto;
+  margin: 0 auto 3vw auto;
 }
 
 .projects .project-entry .wave {
@@ -176,80 +170,55 @@ h3 {
   z-index: 1;
 }
 
-.projects .project-entry hr {
-  margin: 1em 0;
-}
-
 .footer {
   background-color: black;
-  padding: 20% 0 20% 0;
+  padding: 10% 0 10% 0;
 }
 
 .footer footer {
   color: white;
-  font-size: 1em;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
+}
+
+.footer footer span {
+  font-size: 4vw;
+  color: #A6ACCD;
+}
+
+.footer footer .blue {
+  color: #89DDFF;
+}
+
+.footer footer .yellow {
+  color: #FFC66B;
+}
+
+.footer footer .reserved {
+  color: #C790DF;
+}
+
+.footer footer .this {
+  color: #FF5370;
+}
+
+.footer footer .string {
+  color: #C3DF6E;
+  text-decoration: underline;
+}
+
+.footer footer .tab {
+  padding: 0 0 0 2em;
 }
 
 .footer footer ul {
   list-style: none;
   margin: 0;
-  padding: 0;
-}
-
-.footer footer li {
-  padding: 0.5em 0 0 0;
+  padding: 0 5%;
 }
 
 .footer footer a {
   text-decoration: none;
   color: white;
-}
-
-@-webkit-keyframes wiggle {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  25% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  50% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  75% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
-
-@keyframes wiggle {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  25% {
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg);
-  }
-  50% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  75% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
 }
 /*# sourceMappingURL=main.css.map */
