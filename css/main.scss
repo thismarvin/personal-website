@@ -19,7 +19,7 @@ $palette: (primary: #FF004D,
 );
 
 $tablet-width: 768px;
-$desktop-width: 1024px;
+$desktop-width: 950px;
 $mobile-margin: 5%;
 $desktop-margin: 50px;
 $gradient: linear-gradient(get-color(primary), get-color(secondary));
@@ -59,7 +59,7 @@ h1 {
     }
 
     @include desktop {
-        font-size: 3vw;
+        font-size: 3em;
     }
 }
 
@@ -71,7 +71,7 @@ h2 {
     }
 
     @include desktop {
-        font-size: 2.25vw;
+        font-size: 2.25em;
     }
 }
 
@@ -83,7 +83,7 @@ h3 {
     }
 
     @include desktop {
-        font-size: 1.5vw;
+        font-size: 1.5em;
     }
 }
 
@@ -96,7 +96,7 @@ p {
     }
 
     @include desktop {
-        font-size: 1.5vw;
+        font-size: 1em;
     }
 }
 
@@ -106,7 +106,7 @@ p {
     border-radius: 6vw;
 
     @include desktop {
-        border: 0.25vw solid white;
+        border: 0.1em solid white;
     }
 
     a {
@@ -147,7 +147,7 @@ p {
         padding: $mobile-margin $mobile-margin 0 $mobile-margin;
 
         @include desktop() {
-            padding: 2vw 2vw;
+            padding: 50px;
         }
 
         a {
@@ -161,7 +161,7 @@ p {
             }
 
             @include desktop() {
-                font-size: 1.5vw;
+                font-size: 1.5em;
             }
         }
     }
@@ -178,7 +178,9 @@ p {
             padding: 0 0 0 3%;
 
             @include desktop() {
-                font-size: 5vw;
+                font-size: 5em;
+                line-height: 0.8em;
+                padding: 0;
             }
         }
 
@@ -186,7 +188,7 @@ p {
             line-height: 4.5vw;
             padding: 0 0 0 0;
             margin: -2vw auto 0 auto;
-            max-width: 30%;
+            max-width: 440px;
 
             .button {
                 max-width: 200px;
@@ -203,7 +205,7 @@ p {
         font-size: 17vw;
 
         @include desktop() {
-            font-size: 6vw;
+            font-size: 5.25em;
         }
     }
 
@@ -220,42 +222,51 @@ p {
 
     h1 {
         margin: $mobile-margin $mobile-margin 0 $mobile-margin;
+
         @include desktop {
-         text-align: center;
+            text-align: center;
         }
     }
 
-    #entry-one.project-entry,
-    #entry-three.project-entry {
-        $color: black;
-        background: $color;
-
-        .project-preview>i {
-            color: $color;
-        }
+    .container-entry {
+        background: $gradient;
     }
 
-    #entry-two.project-entry,
-    #entry-four.project-entry {
-        $color: $gradient;
-        background: $color;
+    .container-entry.black {
+        background: black;
+    }
 
-        .project-preview>i {
-            color: $color;
+    .container-entry {
+        .wave {
+            width: 100%;
+            height: 10vh;
+            position: block;
+            z-index: 1;
+    
+            @include desktop {
+                height: 100px;
+                display: float;
+            }
         }
     }
 
     .project-entry {
         padding: $mobile-margin 0 0 0;
-        
+
         @include desktop {
             display: grid;
             grid-template-areas:
                 "preview title"
                 "preview info"
-                "preview button"
-                "preview ."
-                "wave wave";
+                "preview button";
+
+            margin: 0;
+            padding: 2em calc((100% - 960px) / 2) 0;
+
+            width: 900px;
+            height: 375px;
+            grid-template-columns: 500px 400px;
+            grid-template-rows: 100px 175px 100px;
         }
 
         .title {
@@ -266,15 +277,19 @@ p {
 
         h2 {
             margin: 0 $mobile-margin $mobile-margin $mobile-margin;
+
             @include desktop {
                 margin: 0;
+                padding: 0;
             }
         }
 
         h3 {
             margin: 0 $mobile-margin;
+
             @include desktop {
                 margin: 0;
+                padding: 0;
             }
         }
 
@@ -283,7 +298,10 @@ p {
 
             @include desktop {
                 grid-area: info;
-                padding: 0 20% 0 0;
+                display: inline-block;
+                width: 400px;
+                padding: 0;
+                margin: 0;
             }
         }
 
@@ -292,7 +310,8 @@ p {
             margin: 0 $mobile-margin;
 
             @include desktop {
-                grid-area: preview;                
+                grid-area: preview;
+                padding: 0;
                 margin: 0;
             }
 
@@ -303,8 +322,9 @@ p {
                 vertical-align: middle;
 
                 @include desktop {
-                    width: 35vw;
-                    padding: 0 10% 5% 20%;
+                    width: calc(100% - 100px);
+                    padding: 50px;
+                    margin: 0 0 0 0;
                 }
             }
         }
@@ -312,37 +332,31 @@ p {
         .button {
             width: 90vw - 1vw;
             margin: 0 auto 3vw auto;
-            
 
             @include desktop {
                 grid-area: button;
                 padding: 0;
-                margin: 0 5vw 0 0;
-                width: 17vw;
+                margin: 0 0.7em 0 0;
+                width: 9em;
+                height: 2em;
                 float: left;
-                margin: 0 1vw 0 0;
 
-            }
-        }
-
-
-
-        .wave {
-            width: 100%;
-            height: 10vh;
-            position: block;
-            z-index: 1;
-
-            @include desktop {
-                grid-area: wave;
+                span {
+                    font-size: 0.8em;
+                }
             }
         }
     }
+
+
 }
 
 .footer {
     background-color: black;
     padding: $mobile-margin * 2 0 $mobile-margin * 2 0;
+    @include desktop() {
+        padding: 5em 0;
+    }
 
     footer {
         color: white;
@@ -359,7 +373,7 @@ p {
             }
 
             @include desktop() {
-                font-size: 1.5vw;
+                font-size: 1.25em;
             }
         }
 
@@ -391,18 +405,21 @@ p {
         ul {
             list-style: none;
 
-            padding: 0 $mobile-margin;
+            padding: 0 $mobile-margin;            
 
-            max-width: 35%;
+            @include desktop() {
+                width: 600px;
                 margin: 0 auto;
-
-
-
+            }
         }
 
         a {
             text-decoration: none;
             color: white;
+
+            @include desktop() {
+                font-size: 0.75em;
+            }
         }
     }
 }
