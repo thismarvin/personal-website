@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Prabowow';
+  src: url("../assets/fonts/Prabowow/prabowow.eot");
+  src: url("../assets/fonts/Prabowow/prabowow.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Prabowow/prabowow.woff2") format("woff2"), url("../assets/fonts/Prabowow/prabowow.woff") format("woff"), url("../assets/fonts/Prabowow/prabowow.ttf") format("truetype"), url("../assets/fonts/Prabowow/prabowow.svg#prabowowregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html,
 body {
   height: 100%;
@@ -48,32 +56,24 @@ h3 {
   color: white;
   margin: 0;
   padding: 0.75em  0.5em;
+  line-height: 1em;
 }
 
 .landing {
-  height: 100%;
   width: 100%;
   color: white;
-}
-
-.landing .background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -2;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(-17.22%, #BD00FF), color-stop(-17.21%, rgba(192, 15, 255, 0.942708)), color-stop(74.93%, rgba(254, 251, 255, 0.0147313)), color-stop(114.81%, rgba(255, 255, 255, 0))), #FF004D;
-  background: linear-gradient(180deg, #BD00FF -17.22%, rgba(192, 15, 255, 0.942708) -17.21%, rgba(254, 251, 255, 0.0147313) 74.93%, rgba(255, 255, 255, 0) 114.81%), #FF004D;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF004D), to(#BD00FF));
+  background: linear-gradient(#FF004D, #BD00FF);
 }
 
 .landing nav {
-  margin: 5% 5% 0 5%;
+  padding: 5% 5% 0 5%;
 }
 
 .landing nav a {
   color: white;
   text-decoration: none;
+  font-weight: bold;
 }
 
 @media (min-width: 800px) {
@@ -83,24 +83,29 @@ h3 {
 }
 
 .landing main {
-  margin: 5vh 5% 0 5%;
+  margin: 0 5% 0 5%;
+  padding: 5vh 0 0 0;
+  line-height: 15vw;
 }
 
 .landing main h1 {
+  font-family: 'Prabowow', sans-serif;
   margin: 0;
-  font-size: 2.25em;
+  font-size: 16vw;
 }
 
 .landing main p {
+  line-height: 1.1em;
   font-size: 1.15em;
+}
+
+.landing .developer {
+  font-size: 18vw;
 }
 
 .landing .wave {
   width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  height: 10vh;
   z-index: -1;
 }
 
@@ -110,39 +115,24 @@ h3 {
 }
 
 .projects h1 {
-  margin: 5%;
+  margin: 5% 5% 0 5%;
 }
 
-.projects #entry-one.project-entry {
+.projects #entry-one.project-entry, .projects #entry-three.project-entry {
   background: black;
 }
 
-.projects #entry-one.project-entry .project-preview > i {
+.projects #entry-one.project-entry .project-preview > i, .projects #entry-three.project-entry .project-preview > i {
   color: black;
 }
 
-.projects #entry-two.project-entry {
-  background: #FF004D;
+.projects #entry-two.project-entry, .projects #entry-four.project-entry {
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF004D), to(#BD00FF));
+  background: linear-gradient(#FF004D, #BD00FF);
 }
 
-.projects #entry-two.project-entry .project-preview > i {
-  color: #FF004D;
-}
-
-.projects #entry-three.project-entry {
-  background: black;
-}
-
-.projects #entry-three.project-entry .project-preview > i {
-  color: black;
-}
-
-.projects #entry-four.project-entry {
-  background: #BD00FF;
-}
-
-.projects #entry-four.project-entry .project-preview > i {
-  color: #BD00FF;
+.projects #entry-two.project-entry .project-preview > i, .projects #entry-four.project-entry .project-preview > i {
+  color: linear-gradient(#FF004D, #BD00FF);
 }
 
 .projects .project-entry {
@@ -159,7 +149,7 @@ h3 {
 }
 
 .projects .project-entry p {
-  margin: 5%;
+  padding: 5%;
 }
 
 .projects .project-entry .project-preview {
@@ -200,10 +190,6 @@ h3 {
   font-size: 1em;
   font-weight: bold;
   text-align: center;
-}
-
-.footer footer h3 {
-  margin: 0;
 }
 
 .footer footer ul {
