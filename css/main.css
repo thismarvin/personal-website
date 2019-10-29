@@ -181,7 +181,7 @@ nav ul {
 }
 
 .landing h1 {
-  width: 85%;
+  width: 78vw;
   padding: 0;
   margin: 0 auto;
   line-height: 0.8em;
@@ -362,7 +362,7 @@ nav ul {
 }
 
 .footer footer {
-  width: 97%;
+  width: 90vw;
   margin: 0 auto;
   padding: 2em 0;
 }
