@@ -31,7 +31,7 @@ $text-color: (primary: get-color(white),
 );
 
 $tablet-width: 768px;
-$desktop-width: 950px;
+$desktop-width: 1000px;
 $padding: 5%;
 
 $gradient: linear-gradient(get-color(primary), get-color(secondary));
@@ -113,7 +113,7 @@ p {
     }
 
     @include desktop {
-        font-size: 1em;
+        font-size: 1.5em;
     }
 }
 
@@ -168,11 +168,22 @@ nav {
 
 .wave {
     width: 100%;
+    height: 25vw;
     transform: translateY(5px);
+
+    @include desktop {
+        height: 10em;
+    }
 }
 
 .container {
     padding: $padding;
+
+    @include desktop {
+        width: 1000px;
+        padding: 0;
+        margin: 0 auto;
+    }
 }
 
 .landing {
@@ -189,6 +200,31 @@ nav {
 
     p {
         text-align: center;
+    }
+
+    .container {
+        padding-top: $padding * 3;
+    }
+
+    @include desktop() {
+        h1 {
+            width: 625px;
+            font-size: 8em;
+        }
+
+        p {
+            max-width: 500px;
+            margin: 1em auto;
+        }
+
+        .button {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .container {
+            padding-top: 100px;
+        }
     }
 }
 
@@ -222,12 +258,73 @@ nav {
         margin: 0 0 0.5em 0;
     }
 
-    #one.project, #three.project {
+    #one.project,
+    #three.project {
         background: get-color(black);
     }
-    
-    #two.project, #four.project {
+
+    #two.project,
+    #four.project {
         background: $gradient;
+    }
+
+    @include desktop {
+        .container {
+            display: grid;
+            grid-template-areas:
+                "preview title"
+                "preview description"
+                "preview links"
+            ;
+            grid-template-columns: 500px 500px;
+            grid-template-rows: 100px 225px 75px;
+        }
+
+        .project-title {
+            grid-area: title;
+            height: 100%;
+        }
+
+        .project-preview {
+            grid-area: preview;
+            height: 100%;
+            display: flex;            
+            align-items: center;      
+            justify-content: center;
+        }
+
+        .project-description {
+            grid-area: description;
+            height: 100%;
+        }
+
+        .project-links {
+            grid-area: links;
+            height: 100%;
+        }
+
+        .buttons {
+            display: flex;
+        }
+
+        .button {
+            width: 200px;
+            margin: 0 1em 0 0;
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        img {
+            width: calc(100% - 50px);
+            height: auto;
+            padding: 25px;
+        }
     }
 }
 
@@ -241,6 +338,10 @@ nav {
     span {
         font-size: 4vw;
         color: #A6ACCD;
+    }
+
+    a {
+        font-size: 4vw;
     }
 
     .blue {
@@ -274,4 +375,18 @@ nav {
         padding: 2em 0;
     }
 
+    @include desktop {
+        span {
+            font-size: 1.5em;
+        }
+
+        a {
+            font-size: 0.6em;
+        }
+
+        footer {
+            width: 475px;
+            padding: 4em 0;
+        }
+    }
 }

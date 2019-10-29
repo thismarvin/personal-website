@@ -36,7 +36,7 @@ h1 {
   }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 1000px) {
   h1 {
     font-size: 3em;
   }
@@ -52,7 +52,7 @@ h2 {
   }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 1000px) {
   h2 {
     font-size: 2.25em;
   }
@@ -68,7 +68,7 @@ h3 {
   }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 1000px) {
   h3 {
     font-size: 1.5em;
   }
@@ -85,9 +85,9 @@ p {
   }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 1000px) {
   p {
-    font-size: 1em;
+    font-size: 1.5em;
   }
 }
 
@@ -114,7 +114,7 @@ nav ul {
   border-radius: 6vw;
 }
 
-@media (min-width: 950px) {
+@media (min-width: 1000px) {
   .button {
     border: 0.1em solid #FFF;
   }
@@ -144,7 +144,7 @@ nav ul {
   }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 1000px) {
   .button span {
     font-size: 1em;
   }
@@ -152,12 +152,27 @@ nav ul {
 
 .wave {
   width: 100%;
+  height: 25vw;
   -webkit-transform: translateY(5px);
           transform: translateY(5px);
 }
 
+@media (min-width: 1000px) {
+  .wave {
+    height: 10em;
+  }
+}
+
 .container {
   padding: 5%;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    width: 1000px;
+    padding: 0;
+    margin: 0 auto;
+  }
 }
 
 .landing {
@@ -176,6 +191,28 @@ nav ul {
 
 .landing p {
   text-align: center;
+}
+
+.landing .container {
+  padding-top: 15%;
+}
+
+@media (min-width: 1000px) {
+  .landing h1 {
+    width: 625px;
+    font-size: 8em;
+  }
+  .landing p {
+    max-width: 500px;
+    margin: 1em auto;
+  }
+  .landing .button {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .landing .container {
+    padding-top: 100px;
+  }
 }
 
 .showcase h1 {
@@ -207,13 +244,81 @@ nav ul {
   margin: 0 0 0.5em 0;
 }
 
-.showcase #one.project, .showcase #three.project {
+.showcase #one.project,
+.showcase #three.project {
   background: #000;
 }
 
-.showcase #two.project, .showcase #four.project {
+.showcase #two.project,
+.showcase #four.project {
   background: -webkit-gradient(linear, left top, left bottom, from(#FF004D), to(#BD00FF));
   background: linear-gradient(#FF004D, #BD00FF);
+}
+
+@media (min-width: 1000px) {
+  .showcase .container {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "preview title" "preview description" "preview links";
+    -ms-grid-columns: 500px 500px;
+        grid-template-columns: 500px 500px;
+    -ms-grid-rows: 100px 225px 75px;
+        grid-template-rows: 100px 225px 75px;
+  }
+  .showcase .project-title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: title;
+    height: 100%;
+  }
+  .showcase .project-preview {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 1;
+    grid-area: preview;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .showcase .project-description {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: description;
+    height: 100%;
+  }
+  .showcase .project-links {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: links;
+    height: 100%;
+  }
+  .showcase .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .showcase .button {
+    width: 200px;
+    margin: 0 1em 0 0;
+  }
+  .showcase h2 {
+    margin: 0;
+  }
+  .showcase p {
+    margin: 0;
+  }
+  .showcase img {
+    width: calc(100% - 50px);
+    height: auto;
+    padding: 25px;
+  }
 }
 
 .footer ul {
@@ -225,6 +330,10 @@ nav ul {
 .footer span {
   font-size: 4vw;
   color: #A6ACCD;
+}
+
+.footer a {
+  font-size: 4vw;
 }
 
 .footer .blue {
@@ -256,5 +365,18 @@ nav ul {
   width: 97%;
   margin: 0 auto;
   padding: 2em 0;
+}
+
+@media (min-width: 1000px) {
+  .footer span {
+    font-size: 1.5em;
+  }
+  .footer a {
+    font-size: 0.6em;
+  }
+  .footer footer {
+    width: 475px;
+    padding: 4em 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */
