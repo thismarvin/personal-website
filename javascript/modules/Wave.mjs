@@ -2,10 +2,10 @@ export default class Wave {
     /**    
      * Attaches a canvas that has a neat wave animation to a given element id.
      * Stay wavy 🌊🌊🌊. 
-     * @param id the id of the element that you want to attach the Wave to
-     * @param startOffset a perctange (represented as a decimal) that reprsents the start of the wave 
-     * @param span a perctange (represented as a decimal) of how far the wave should span up and down
-     * @param color the color of the wave
+     * @param {string} id the id of the element that you want to attach the Wave to
+     * @param {number} startOffset a perctange (represented as a decimal) that reprsents the start of the wave 
+     * @param {number} span a perctange (represented as a decimal) of how far the wave should span up and down
+     * @param {string} color the hexadecimal representation of the desired color of the wave
      */
     constructor(id, startOffset, span, color) {
 
@@ -26,7 +26,7 @@ export default class Wave {
             let maxAngle;
 
             p5.setup = function () {
-                myCanvas = p5.createCanvas(attachedDiv.clientWidth, attachedDiv.clientHeight * 1.05);
+                myCanvas = p5.createCanvas(attachedDiv.clientWidth, attachedDiv.clientHeight);
                 myCanvas.parent(attachedDiv);
 
                 noiseOffset = p5.random() * p5.TWO_PI;
@@ -83,7 +83,7 @@ export default class Wave {
             };
 
             p5.windowResized = function () {
-                myCanvas = p5.resizeCanvas(attachedDiv.clientWidth, attachedDiv.clientHeight * 1.05);
+                myCanvas = p5.resizeCanvas(attachedDiv.clientWidth, attachedDiv.clientHeight);
             }
         };
 

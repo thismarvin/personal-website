@@ -2,6 +2,10 @@
     @return map-get($palette, $color);
 }
 
+@function text-color($type) {
+    @return map-get($text-color, $type);
+}
+
 @mixin tablet {
     @media (min-width: #{$tablet-width}) {
         @content;
@@ -16,12 +20,20 @@
 
 $palette: (primary: #FF004D,
     secondary: #BD00FF,
+
+    white: #FFF,
+    gray: #888,
+    black: #000,
+);
+
+$text-color: (primary: get-color(white),
+    secondary: get-color(gray),
 );
 
 $tablet-width: 768px;
 $desktop-width: 950px;
-$mobile-margin: 5%;
-$desktop-margin: 50px;
+$padding: 5%;
+
 $gradient: linear-gradient(get-color(primary), get-color(secondary));
 
 @font-face {
@@ -38,17 +50,22 @@ $gradient: linear-gradient(get-color(primary), get-color(secondary));
 
 html,
 body {
+    margin: 0;
+    padding: 0;
     height: 100%;
 }
 
 body {
-    margin: 0;
-    background-color: black;
+    background-color: get-color(black);
 }
 
 * {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    color: text-color(primary);
+}
+
+a {
+    text-decoration: none;
 }
 
 h1 {
@@ -100,326 +117,161 @@ p {
     }
 }
 
+nav {
+    padding: $padding;
+    font-size: 5vw;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
 .button {
     background-color: transparent;
-    border: 0.5vw solid white;
+    border: 0.5vw solid get-color(white);
     border-radius: 6vw;
 
     @include desktop {
-        border: 0.1em solid white;
+        border: 0.1em solid get-color(white);
     }
 
     a {
         display: table;
         width: 100%;
         height: 100%;
-        text-decoration: none;
+    }
 
-        span {
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
-            text-transform: uppercase;
-            font-size: 5vw;
-            font-weight: bold;
-            color: white;
-            margin: 0;
-            padding: 0.75em 0.5em;
-            line-height: 1em;
+    span {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 5vw;
+        font-weight: bold;
+        margin: 0;
+        padding: 0.75em 0.5em;
+        line-height: 1em;
 
-            @include tablet {
-                font-size: 3vw;
-            }
+        @include tablet {
+            font-size: 3vw;
+        }
 
-            @include desktop {
-                font-size: 1em;
-            }
+        @include desktop {
+            font-size: 1em;
         }
     }
+}
+
+.wave {
+    width: 100%;
+    transform: translateY(5px);
+}
+
+.container {
+    padding: $padding;
 }
 
 .landing {
-    width: 100%;
-    color: white;
     background: $gradient;
 
-    nav {
-        padding: $mobile-margin $mobile-margin 0 $mobile-margin;
-
-        @include desktop() {
-            padding: 50px;
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 5vw;
-
-            @include tablet {
-                font-size: 3vw;
-            }
-
-            @include desktop() {
-                font-size: 1.5em;
-            }
-        }
+    h1 {
+        width: 85%;
+        padding: 0;
+        margin: 0 auto;
+        line-height: 0.8em;
+        font-family: 'Prabowow', sans-serif;
+        font-size: 16vw;
     }
 
-    main {
-        margin: 0 $mobile-margin 0 $mobile-margin;
-        padding: 5vh 0 0 0;
-        line-height: 15vw;
-
-        h1 {
-            font-family: 'Prabowow', sans-serif;
-            margin: 0;
-            font-size: 16vw;
-            padding: 0;
-
-            @include desktop() {
-                font-size: 5em;
-                line-height: 0.8em;
-                padding: 0;
-            }
-        }
-
-        @include desktop() {
-            line-height: 4.5vw;
-            padding: 0 0 0 0;
-            margin: -2vw auto 0 auto;
-            max-width: 440px;
-
-            .button {
-                max-width: 200px;
-                margin: 0 auto;
-            }
-
-            p {
-                text-align: center;
-            }
-        }
-    }
-
-    .developer {
-        font-size: 17vw;
-
-        @include desktop() {
-            font-size: 5.25em;
-        }
-    }
-
-    .wave {
-        width: 100%;
-        height: 10vh;
-        z-index: -1;
+    p {
+        text-align: center;
     }
 }
 
-.projects {
-    width: 100%;
-    color: white;
-
+.showcase {
     h1 {
-        margin: $mobile-margin $mobile-margin 0 $mobile-margin;
-
-        @include desktop {
-            text-align: center;
-        }
+        text-align: center;
     }
 
-    .container-entry {
+    h2 {
+        margin: 0 0 5vw 0;
+    }
+
+    h3 {
+        margin: 0;
+    }
+
+    p {
+        margin: 5vw 0;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .container {
+        padding-bottom: 0;
+    }
+
+    .button {
+        margin: 0 0 0.5em 0;
+    }
+
+    #one.project, #three.project {
+        background: get-color(black);
+    }
+    
+    #two.project, #four.project {
         background: $gradient;
     }
-
-    .container-entry.black {
-        background: black;
-    }
-
-    .container-entry {
-        .wave {
-            width: 100%;
-            height: 10vh;
-            position: block;
-            z-index: 1;
-    
-            @include desktop {
-                height: 100px;
-                display: float;
-            }
-        }
-    }
-
-    .project-entry {
-        padding: $mobile-margin 0 0 0;
-
-        @include desktop {
-            display: grid;
-            grid-template-areas:
-                "preview title"
-                "preview info"
-                "preview button";
-
-            margin: 0;
-            padding: 2em calc((100% - 960px) / 2) 0;
-
-            width: 900px;
-            height: 375px;
-            grid-template-columns: 500px 400px;
-            grid-template-rows: 100px 175px 100px;
-        }
-
-        .title {
-            @include desktop {
-                grid-area: title;
-            }
-        }
-
-        h2 {
-            margin: 0 $mobile-margin $mobile-margin $mobile-margin;
-
-            @include desktop {
-                margin: 0;
-                padding: 0;
-            }
-        }
-
-        h3 {
-            margin: 0 $mobile-margin;
-
-            @include desktop {
-                margin: 0;
-                padding: 0;
-            }
-        }
-
-        p {
-            padding: $mobile-margin;
-
-            @include desktop {
-                grid-area: info;
-                display: inline-block;
-                width: 400px;
-                padding: 0;
-                margin: 0;
-            }
-        }
-
-        .project-preview {
-            display: table;
-            margin: 0 $mobile-margin;
-
-            @include desktop {
-                grid-area: preview;
-                padding: 0;
-                margin: 0;
-            }
-
-            img {
-                width: 90vw;
-                height: auto;
-                display: table-cell;
-                vertical-align: middle;
-
-                @include desktop {
-                    width: calc(100% - 100px);
-                    padding: 50px;
-                    margin: 0 0 0 0;
-                }
-            }
-        }
-
-        .button {
-            width: 90vw - 1vw;
-            margin: 0 auto 3vw auto;
-
-            @include desktop {
-                grid-area: button;
-                padding: 0;
-                margin: 0 0.7em 0 0;
-                width: 9em;
-                height: 2em;
-                float: left;
-
-                span {
-                    font-size: 0.8em;
-                }
-            }
-        }
-    }
-
-
 }
 
 .footer {
-    background-color: black;
-    padding: $mobile-margin * 2 0 $mobile-margin * 2 0;
-    @include desktop() {
-        padding: 5em 0;
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    span {
+        font-size: 4vw;
+        color: #A6ACCD;
+    }
+
+    .blue {
+        color: #89DDFF;
+    }
+
+    .yellow {
+        color: #FFC66B;
+    }
+
+    .purple {
+        color: #C790DF;
+    }
+
+    .red {
+        color: #FF5370;
+    }
+
+    .green {
+        color: #C3DF6E;
+        text-decoration: underline;
+    }
+
+    .tab {
+        padding: 0 0 0 2em;
     }
 
     footer {
-        color: white;
-
-        font-weight: bold;
-        text-align: left;
-
-        span {
-            font-size: 4vw;
-            color: #A6ACCD;
-
-            @include tablet {
-                font-size: 3vw;
-            }
-
-            @include desktop() {
-                font-size: 1.25em;
-            }
-        }
-
-        .blue {
-            color: #89DDFF;
-        }
-
-        .yellow {
-            color: #FFC66B;
-        }
-
-        .reserved {
-            color: #C790DF;
-        }
-
-        .this {
-            color: #FF5370;
-        }
-
-        .string {
-            color: #C3DF6E;
-            text-decoration: underline;
-        }
-
-        .tab {
-            padding: 0 0 0 2em;
-        }
-
-        ul {
-            list-style: none;
-
-            padding: 0 $mobile-margin;            
-
-            @include desktop() {
-                width: 600px;
-                margin: 0 auto;
-            }
-        }
-
-        a {
-            text-decoration: none;
-            color: white;
-
-            @include desktop() {
-                font-size: 0.75em;
-            }
-        }
+        width: 97%;
+        margin: 0 auto;
+        padding: 2em 0;
     }
+
 }
