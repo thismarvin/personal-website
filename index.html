@@ -20,184 +20,201 @@
 <body>
 
     <div class="landing">
-
-        <nav><a href="#">thismarvin</a></nav>
-
-        <main>
-            <h1>Game</h1>
-            <h1 class="developer">Developer</h1>
-            <h1>FrontEnd</h1>
-            <h1 class="developer">Developer</h1>
-            <h1>Software</h1>
-            <h1 class="developer">Developer</h1>
-            <p>I’m Marvin, and I make games, websites, and software.
-                I can help bring your ideas and designs to life through creative media.</p>
+        <!--
+        <nav>
+            <ul>
+                <li></li>
+            </ul>
+        </nav>
+        -->
+        <div class="container">
+            <h1>
+                Game<br>
+                Developer<br>
+                Frontend<br>
+                Developer<br>
+                Software<br>
+                Developer<br>
+            </h1>
+            <p>
+                I’m Marvin, and I make games, websites, and software. I can help bring your ideas and designs to life
+                through creative media.
+            </p>
             <div class="button">
                 <a href="mailto:contact@thismarvin.com">
                     <span>Contact Me</span>
                 </a>
             </div>
-
-        </main>
-
+        </div>
         <div id="wave-landing" class="wave"></div>
-
     </div>
 
-    <div class="projects">
+    <div class="showcase">
+        <h1>Latest Projects</h1>
 
-        <section>
-
-            <h1>Latest Projects</h1>
-
-            <div class="container-entry black">
-                <div id="entry-one" class="project-entry">
-                    <div class="title">
-                        <h3>game engine</h3>
-                        <h2>Morro</h2>
-                    </div>
-    
-                    <div class="project-preview">
-                        <img src="assets/images/me_preview.png" alt="">
-                    </div>
+        <div class="project" id="one">
+            <div class="container">
+                <div class="project-title">
+                    <h3>game engine</h3>
+                    <h2>Morro</h2>
+                </div>
+                <div class="project-preview">
+                    <img src="assets/images/me_preview.png" alt="Morro Game Engine">
+                </div>
+                <div class="project-description">
                     <p>
                         Morro is a cross platform 2D game engine written in C# on top of the MonoGame Framework.
                         <br><br>
                         Morro is a passion project that is constantly being tweaked and improved.
-                        Morro mainly caters to 2D games, but it also can be used for any sort of creative visualizations.
+                        Morro mainly caters to 2D games, but it also can be used for any sort of creative
+                        visualizations.
                     </p>
-    
-                    <div class="button" id="source">
-                        <a href="https://github.com/thismarvin/morro">
-                            <span>View Source Code</span>
-                        </a>
-                    </div>                
                 </div>
-                <div id="wave-one" class="wave"></div>
+                <div class="project-links">
+                    <div class="buttons">
+                        <div class="button">
+                            <a href="https://github.com/thismarvin/morro">
+                                <span>View Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="wave" id="wave-one"></div>
+        </div>
 
-            <div class="container-entry">
-                <div id="entry-two" class="project-entry">
-                    <div class="title">
-                        <h3>action platformer</h3>
-                        <h2>Quantum Caverns</h2>
-                    </div>
-    
-                    <div class="project-preview">
-                        <img src="assets/images/qc_preview.png" alt="">
-                    </div>
+        <div class="project" id="two">
+            <div class="container">
+                <div class="project-title">
+                    <h3>action platformer</h3>
+                    <h2>Quantum Caverns</h2>
+                </div>
+                <div class="project-preview">
+                    <img src="assets/images/qc_preview.png" alt="Quantum Caverns">
+                </div>
+                <div class="project-description">
                     <p>
                         Quantum Caverns is a 2D Platformer written in Python using the Pygame library for the GameShell
                         Game Jam
                         (2019Q3).
                         <br><br>
-                        Quantum Caverns was designed to run natively on the ClockworkPi GameShell, but you can run the game
+                        Quantum Caverns was designed to run natively on the ClockworkPi GameShell, but you can run the
+                        game
                         on
                         any computer that has the latest version of Python and Pygame installed.
                     </p>
-    
+                </div>
+                <div class="project-links">
                     <div class="buttons">
-                        <div class="button" id="source">
+                        <div class="button">
                             <a href="https://github.com/thismarvin/quantum-caverns">
                                 <span>View Source Code</span>
                             </a>
                         </div>
-                        <div class="button" id="page">
+                        <div class="button">
                             <a href="https://team-am-squared.itch.io/quantum-caverns">
                                 <span>View Project Page</span>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div id="wave-two" class="wave"></div>
             </div>
+            <div class="wave" id="wave-two"></div>
+        </div>
 
-            <div class="container-entry black">
-                <div id="entry-three" class="project-entry">
-                    <div class="title">
-                        <h3>role playing game</h3>
-                        <h2>Diner Mafia</h2>
-                    </div>
-    
-                    <div class="project-preview">
-                        <img src="assets/images/dm_preview.png" alt="">
-                    </div>
+        <div class="project" id="three">
+            <div class="container">
+                <div class="project-title">
+                    <h3>role playing game</h3>
+                    <h2>Diner Mafia</h2>
+                </div>
+                <div class="project-preview">
+                    <img src="assets/images/dm_preview.png" alt="Diner Mafia">
+                </div>
+                <div class="project-description">
                     <p>
                         Diner Mafia is a 2D RPG written in Python using the Pygame library for the GameShell Game Jam
                         (2019Q2).
                         <br><br>
-                        Diner Mafia was designed to run natively on the ClockworkPi GameShell, but you can run the game on
+                        Diner Mafia was designed to run natively on the ClockworkPi GameShell, but you can run the game
+                        on
                         any computer that has the latest version of Python and Pygame installed.
                     </p>
-    
+                </div>
+                <div class="project-links">
                     <div class="buttons">
-                        <div class="button" id="source">
+                        <div class="button">
                             <a href="https://github.com/austin0209/diner-mafia">
                                 <span>View Source Code</span>
                             </a>
                         </div>
-                        <div class="button" id="page">
+                        <div class="button">
                             <a href="https://team-am-squared.itch.io/diner-mafia">
                                 <span>View Project Page</span>
                             </a>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
-                <div id="wave-three" class="wave"></div>
             </div>
+            <div class="wave" id="wave-three"></div>
+        </div>
 
-
-            <div class="container-entry">
-                <div id="entry-four" class="project-entry">
-    
-                    <div class="title">
-                        <h3>action platformer</h3>
-                        <h2>Larry the Lightbulb</h2>
-                    </div>
-    
-                    <div class="project-preview">
-                        <img src="assets/images/ltl_preview.png" alt="">
-                    </div>
-    
+        <div class="project" id="four">
+            <div class="container">
+                <div class="project-title">
+                    <h3>action platformer</h3>
+                    <h2>Larry the Lightbulb</h2>
+                </div>
+                <div class="project-preview">
+                    <img src="assets/images/ltl_preview.png" alt="Larry the Lightbulb">
+                </div>
+                <div class="project-description">
                     <p>
                         Larry the Lightbulb is a 2D Platformer written in C# using the MonoGame Framework.
                         <br><br>
-                        Larry the Lightbulb runs natively on Windows, and will run on MacOS and Linux if the Mono Framework
+                        Larry the Lightbulb runs natively on Windows, and will run on MacOS and Linux if the Mono
+                        Framework
                         is
                         installed.
                         Larry the Lightbulb is also available for free on iOS and Android!
                     </p>
-    
-                    <div class="button" id="source">
-                        <a href="https://flourflo.itch.io/larry-the-lightbulb">
-                            <span>View Project Page</span>
-                        </a>
-                    </div>                    
                 </div>
-                <div id="wave-four" class="wave"></div>
+                <div class="project-links">
+                    <div class="buttons">
+                        <div class="button">
+                            <a href="https://flourflo.itch.io/larry-the-lightbulb">
+                                <span>View Project Page</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-        </section>
+            <div class="wave" id="wave-four"></div>
+        </div>
     </div>
 
     <div class="footer">
-        <footer>
-            <ul>
-                <li><span class="blue">export default </span><span class="reserved"> class </span> <span class="yellow">
-                        ContactInformation </span> <span><span class="blue">{</span></span></li>
-                <li><span class="tab"></span> <span class="reserved">constructor</span> <span class="blue">( ) {</span>
-                </li>
-                <li><a href="mailto:contact@thismarvin.com"><span class="tab"><span class="tab"></span><span
-                                class="this">this</span><span>.email </span><span class="blue">= "</span><span
-                                class="string">contact@thismarvin.com</span> <span class="blue">";</span></a></li>
-                <li><a href="https://www.github.com/thismarvin"><span class="tab"><span class="tab"></span><span
-                                class="this">this</span><span>.github </span><span class="blue">= "</span><span
-                                class="string">github.com/thismarvin</span> <span class="blue">";</span></a></li>
-                <li><span class="tab"></span><span class="blue">}</span></li>
-                <li><span class="blue">}</span></li>
-                <li></li>
-            </ul>
-        </footer>
+        <div class="container">
+            <footer>
+                <ul>
+                    <li><span class="blue">export default </span><span class="purple"> class </span><span
+                            class="yellow">
+                            ContactInformation </span> <span class="blue">{</span></li>
+                    <li><span class="tab"></span> <span class="purple">constructor</span> <span class="blue">( )
+                            {</span>
+                    </li>
+                    <li><a href="mailto:contact@thismarvin.com"><span class="tab"><span class="tab"></span><span
+                                    class="red">this</span><span>.email </span><span class="blue">= "</span><span
+                                    class="green">contact@thismarvin.com</span> <span class="blue">";</span></a></li>
+                    <li><a href="https://www.github.com/thismarvin"><span class="tab"><span class="tab"></span><span
+                                    class="red">this</span><span>.github </span><span class="blue">= "</span><span
+                                    class="green">github.com/thismarvin</span> <span class="blue">";</span></a></li>
+                    <li><span class="tab"></span><span class="blue">}</span></li>
+                    <li><span class="blue">}</span></li>
+                    <li></li>
+                </ul>
+            </footer>
+        </div>
     </div>
 
 </body>
