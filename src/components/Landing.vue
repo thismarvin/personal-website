@@ -16,12 +16,18 @@
       </p>
       <a href="mailto:contact@thismarvin.com">Contact Me</a>
     </div>
+    <Wave id="wave-landing"/>
   </div>
 </template>
 
 <script>
+import Wave from "./Wave.vue";
+
 export default {
-  name: "Landing"
+  name: "Landing",
+  components: {
+    Wave
+  }
 };
 </script>
 

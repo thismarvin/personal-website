@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Wave />
     <footer>
       <ul>
         <li>
@@ -17,13 +16,8 @@
 </template>
 
 <script>
-import Wave from "./Wave.vue";
-
 export default {
-  name: "Footer",
-  components: {
-    Wave
-  }
+  name: "Footer"
 };
 </script>
 

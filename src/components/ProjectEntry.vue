@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <Wave />
+  <div :class="{secondary : isSecondaryEntry}">
     <div id="entry">
       <h2>{{ entry.subtitle }}</h2>
       <h1>{{ entry.title }}</h1>
-      <img :src="pathToPreview" alt="Project Preview"/>
+      <img :src="pathToPreview" alt="Project Preview" />
       <p>{{ entry.description }}</p>
       <p>{{ entry.background }}</p>
     </div>
+    <Wave :id="waveID" :isSecondary="!isSecondaryEntry" />
   </div>
 </template>
 
@@ -25,27 +25,48 @@ export default {
   computed: {
     pathToPreview: function() {
       return `/images/${this.entry.image}`;
+    },
+    waveID: function() {
+      return "wave-" + this.entry.title.split(" ")[0].toLowerCase();
+    },
+    isSecondaryEntry: function() {
+      return this.entry.id % 2 !== 0;
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-h1,
-h2,
+@import "../scss/variables.scss";
+@import "../scss/mixins.scss";
+@import "../scss/functions.scss";
+
+h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+h1 {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
 p {
-    margin: 0;
-    padding: 0;
+  font-size: 1.5em;
+  line-height: 1.1em;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 #entry {
   padding: 1em;
-  margin-bottom: 1em;
+  padding-bottom: 0;
 }
 
-img {
-    width: 100%;
-    height: auto;
+.secondary {
+  background: $gradient-background;
 }
-
 </style>
