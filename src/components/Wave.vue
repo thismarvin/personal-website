@@ -1,14 +1,32 @@
 <template>
-  <div>
-    <h1>🌊🌊🏄‍♂️🌊🏄‍♀️🌊🌊</h1>
-  </div>
+  <div :id="id" class="wave"></div>
 </template>
 
 <script>
+const { Wave } = require("../modules/wave.js");
+
 export default {
-  name: "Wave"
+  name: "Wave",
+  props: {
+    id: String,
+    isSecondary: Boolean
+  },
+  mounted: function() {
+    this.$nextTick(function() {
+      if (!this.isSecondary) {
+        new Wave(this.id, 0.5, 0.3, "#000000");
+      } else {
+        new Wave(this.id, 0.5, 0.3, "#FF004D");
+      }
+    });
+  }
 };
 </script>
 
 <style lang="scss" scoped>
+.wave {
+  width: 100%;
+  height: 25vw;
+  transform: translateY(5px);
+}
 </style>
