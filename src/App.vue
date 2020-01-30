@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Landing/>
+    <Landing />
     <ProjectEntry v-for="entry of entries" v-bind:key="entry.id" v-bind:entry="entry" />
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -25,13 +25,15 @@ export default {
           id: 0,
           title: "Morro",
           subtitle: "game engine",
+          image: "me_preview.png",
           description: "Morro is written in C# and uses the MonoGame Framework",
           background: "Morro is a passion project."
         },
         {
           id: 1,
-          title: "Robosses",
-          subtitle: "boss rush",
+          title: "Quantum Caverns",
+          subtitle: "action platformer",
+          image: "qc_preview.png",
           description:
             "Robosses is written in Python and uses the pygame Framework",
           background: "Robosses was made for the GameShell Game Jam 2019Q4."
@@ -43,9 +45,27 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: #2c3e50;
+@import "./scss/variables.scss";
+@import "./scss/mixins.scss";
+@import "./scss/functions.scss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-color: get-color(black);
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+.container {
+  margin: 0 $mobile-margin;
 }
 </style>

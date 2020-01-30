@@ -1,0 +1,23 @@
+$palette: (white: #fff,
+  gray: #888,
+  black: #000,
+  gradient-start: #ff004d,
+  gradient-end: #bd00ff);
+
+$text-color: (primary: get-color(white),
+  secondary: get-color(gray),
+);
+
+@font-face {
+  font-family: 'Prabowow';
+  src: url('/fonts/Prabowow/prabowow.eot');
+  src: url('/fonts/Prabowow/prabowow.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Prabowow/prabowow.woff2') format('woff2'),
+    url('/fonts/Prabowow/prabowow.woff') format('woff'),
+    url('/fonts/Prabowow/prabowow.ttf') format('truetype'),
+    url('/fonts/Prabowow/prabowow.svg#prabowowregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$mobile-margin: 1em;

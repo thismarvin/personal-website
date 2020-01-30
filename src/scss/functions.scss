@@ -1,0 +1,7 @@
+@function get-color($color) {
+    @return map-get($palette, $color);
+}
+
+@function text-color($type) {
+    @return map-get($text-color, $type);
+}
