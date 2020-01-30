@@ -1,14 +1,34 @@
 <template>
-  <div>
+  <div class="container">
     <footer>
       <ul>
         <li>
-          email:
-          <a href="mailto:contact@thismarvin.com">contact@thismarvin.com</a>
+          <span class="purple">let</span> contactInformation
+          <span class="blue">= {</span>
         </li>
         <li>
-          github:
-          <a href="http://github.com/thismarvin">github.com/thismarvin</a>
+          <span class="tab"></span>
+          <span class="red">
+            email
+            <span class="blue">: </span>
+          </span>
+          <a href="mailto:contact@thismarvin.com">
+            <span class="green">"contact@thismarvin.com"</span>
+            <span class="blue">,</span>
+          </a>
+        </li>
+        <li>
+          <span class="tab"></span>
+          <span class="red">
+            github
+            <span class="blue">: </span>
+          </span>
+          <a href="http://github.com/thismarvin">
+            <span class="green">"github.com/thismarvin"</span>
+          </a>
+        </li>
+        <li>
+          <span class="blue">};</span>
         </li>
       </ul>
     </footer>
@@ -22,4 +42,48 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../scss/variables.scss";
+@import "../scss/mixins.scss";
+@import "../scss/functions.scss";
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  color: #a6accd;
+}
+
+.container {
+  margin: 0 $mobile-margin;
+  margin-top: 4em;
+  margin-bottom: 4em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab {
+  padding: 0 0 0 1.25em;
+}
+
+.blue {
+  color: #89ddff;
+}
+
+.purple {
+  color: #c790df;
+}
+
+.red {
+  color: #ff5370;
+}
+
+.green {
+  color: #c3df6e;
+  text-decoration: underline;
+}
 </style>
