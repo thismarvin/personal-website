@@ -56,7 +56,10 @@ ul {
 
 li {
   color: #a6accd;
-  
+
+  @include tablet {
+    font-size: 1.2em;
+  }
   @include desktop {
     font-size: 1.5em;
   }

@@ -10,12 +10,11 @@
         <br />Developer
         <br />
       </h1>
-        <p>
-          I’m Marvin, and I make games, websites, and software. I can help bring your ideas and designs to life
-          through creative media.
-        </p>
-        <HyperButton link="mailto:contact@thismarvin.com" callToAction="Contact Me"/>
-
+      <p>
+        I’m Marvin, and I make games, websites, and software. I can help bring your ideas and designs to life
+        through creative media.
+      </p>
+      <HyperButton link="mailto:contact@thismarvin.com" callToAction="Contact Me" />
     </div>
     <Wave id="wave-landing" />
   </div>
@@ -45,6 +44,10 @@ h1 {
   font-family: "Prabowow", sans-serif;
   font-size: 16vw;
 
+  @include tablet {
+    font-size: 5.5em;
+  }
+
   @include desktop {
     font-size: 8em;
   }
@@ -73,7 +76,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 4 * $mobile-margin;
-  padding-bottom: 2 * $mobile-margin;
+  padding-top: calc(4 * var(--container-margin));
+  padding-bottom: calc(2 * var(--container-margin));
 }
 </style>

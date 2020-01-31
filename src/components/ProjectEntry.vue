@@ -119,8 +119,10 @@ img {
       "preview title"
       "preview about"
       "preview links";
-    grid-template-columns: 500px 500px;
-    grid-template-rows: 100px 250px 100px;
+    grid-template-columns:
+      calc(500px - var(--container-margin))
+      calc(500px - var(--container-margin));
+    //grid-template-rows: 100px 250px 100px;
   }
 
   #preview {

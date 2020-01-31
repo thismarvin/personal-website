@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="website">
     <div id="landing">
       <Landing />
     </div>
@@ -103,11 +103,15 @@ body {
 }
 
 .container {
-  margin: 0 $mobile-margin;
+  margin: 0 var(--container-margin);
+
+  @include tablet {
+    width: calc(var(--tablet-width) - var(--container-margin) * 2);
+    margin: 0 auto;
+  }
 
   @include desktop {
-    width: 1000px;
-    padding: 0;
+    width: calc(var(--desktop-width) - var(--container-margin) * 2);
     margin: 0 auto;
   }
 }

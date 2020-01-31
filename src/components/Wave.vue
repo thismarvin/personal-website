@@ -32,6 +32,10 @@ export default {
   height: 25vw;
   transform: translateY(5px);
 
+  @include tablet {
+    height: 8em;
+  }
+
   @include desktop {
     height: 10em;
   }
