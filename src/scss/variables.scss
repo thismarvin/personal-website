@@ -22,7 +22,14 @@ $text-color: (primary: get-color(white),
   font-style: normal;
 }
 
-$mobile-margin: 1em;
+:root {
+  --container-margin: 1em;
+  --tablet-width: 500px;
+  --desktop-width: 1000px;
+}
+
+$container-margin: 1em;
+$tablet-width: 500px;
 $desktop-width: 1000px;
 
 $gradient-background: linear-gradient(get-color(gradient-start),
