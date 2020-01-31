@@ -8,10 +8,9 @@
         </li>
         <li>
           <span class="tab"></span>
-          <span class="red">
-            email
-            <span class="blue">: </span>
-          </span>
+          <span class="red">email</span>
+          <span class="blue">: </span>
+
           <a href="mailto:contact@thismarvin.com">
             <span class="green">"contact@thismarvin.com"</span>
             <span class="blue">,</span>
@@ -19,10 +18,9 @@
         </li>
         <li>
           <span class="tab"></span>
-          <span class="red">
-            github
-            <span class="blue">: </span>
-          </span>
+          <span class="red">github</span>
+          <span class="blue">: </span>
+
           <a href="http://github.com/thismarvin">
             <span class="green">"github.com/thismarvin"</span>
           </a>
@@ -46,6 +44,10 @@ export default {
 @import "../scss/mixins.scss";
 @import "../scss/functions.scss";
 
+footer {
+  padding: 5em 0;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -58,8 +60,6 @@ li {
 
 .container {
   margin: 0 $mobile-margin;
-  margin-top: 4em;
-  margin-bottom: 4em;
 
   display: flex;
   align-items: center;

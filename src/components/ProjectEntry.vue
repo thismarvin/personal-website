@@ -1,11 +1,17 @@
 <template>
   <div :class="{secondary : isSecondaryEntry}">
-    <div id="entry">
-      <h2>{{ entry.subtitle }}</h2>
-      <h1>{{ entry.title }}</h1>
-      <img :src="pathToPreview" alt="Project Preview" />
-      <p>{{ entry.description }}</p>
-      <p>{{ entry.background }}</p>
+    <div class="container">
+      <div id="title">
+        <h2>{{ entry.subtitle }}</h2>
+        <h1>{{ entry.title }}</h1>
+      </div>
+      <div id="preview">
+        <img :src="pathToPreview" alt="Project Preview" />
+      </div>
+      <div id="about">
+        <p>{{ entry.description }}</p>
+        <p>{{ entry.background }}</p>
+      </div>
       <div id="buttons">
         <HyperButton :link="entry.sourceCode" callToAction="View Source Code" class="button" />
         <HyperButton :link="entry.projectPage" callToAction="View Project Page" class="button" />
@@ -65,11 +71,6 @@ p {
 img {
   width: 100%;
   height: auto;
-}
-
-#entry {
-  padding: 1em;
-  padding-bottom: 0;
 }
 
 #buttons {

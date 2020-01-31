@@ -1,8 +1,14 @@
 <template>
   <div id="app">
-    <Landing />
-    <ProjectEntry v-for="entry of entries" v-bind:key="entry.id" v-bind:entry="entry" />
-    <Footer />
+    <div id="landing">
+      <Landing />
+    </div>
+    <div id="entries">
+      <ProjectEntry v-for="entry of entries" v-bind:key="entry.id" v-bind:entry="entry" />
+    </div>
+    <div id="footer">
+      <Footer />
+    </div>
   </div>
 </template>
 
