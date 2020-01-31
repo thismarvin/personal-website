@@ -33,6 +33,10 @@ a {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+
+  @include desktop {
+    width: 300px;
+  }
 }
 
 .invalid {

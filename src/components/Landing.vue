@@ -10,11 +10,12 @@
         <br />Developer
         <br />
       </h1>
-      <p>
-        I’m Marvin, and I make games, websites, and software. I can help bring your ideas and designs to life
-        through creative media.
-      </p>
-      <HyperButton link="mailto:contact@thismarvin.com" callToAction="Contact Me" />
+        <p>
+          I’m Marvin, and I make games, websites, and software. I can help bring your ideas and designs to life
+          through creative media.
+        </p>
+        <HyperButton link="mailto:contact@thismarvin.com" callToAction="Contact Me"/>
+
     </div>
     <Wave id="wave-landing" />
   </div>
@@ -28,7 +29,7 @@ export default {
   name: "Landing",
   components: {
     HyperButton,
-    Wave,
+    Wave
   }
 };
 </script>
@@ -43,12 +44,20 @@ h1 {
   line-height: 0.8em;
   font-family: "Prabowow", sans-serif;
   font-size: 16vw;
+
+  @include desktop {
+    font-size: 8em;
+  }
 }
 
 p {
   text-align: center;
   font-size: 1.4em;
   line-height: 1.1em;
+
+  @include desktop {
+    width: 500px;
+  }
 }
 
 #landing {
@@ -61,6 +70,7 @@ p {
 .container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 4 * $mobile-margin;

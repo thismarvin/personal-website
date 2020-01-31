@@ -104,5 +104,11 @@ body {
 
 .container {
   margin: 0 $mobile-margin;
+
+  @include desktop {
+    width: 1000px;
+    padding: 0;
+    margin: 0 auto;
+  }
 }
 </style>
