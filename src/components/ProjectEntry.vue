@@ -91,11 +91,17 @@ img {
   }
 }
 
-#buttons {
+#links {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 }
 
 .button {
