@@ -23,6 +23,7 @@ $text-color: (primary: get-color(white),
 }
 
 $mobile-margin: 1em;
+$desktop-width: 1000px;
 
 $gradient-background: linear-gradient(get-color(gradient-start),
   get-color(gradient-end));
