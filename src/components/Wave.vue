@@ -33,7 +33,7 @@ export default {
   transform: translateY(5px);
 
   @include desktop {
-    height: 20em;
+    height: 10em;
   }
 }
 </style>

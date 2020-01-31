@@ -12,7 +12,7 @@
         <p>{{ entry.description }}</p>
         <p>{{ entry.background }}</p>
       </div>
-      <div id="buttons">
+      <div id="links">
         <HyperButton :link="entry.sourceCode" callToAction="View Source Code" class="button" />
         <HyperButton :link="entry.projectPage" callToAction="View Project Page" class="button" />
       </div>
@@ -56,21 +56,39 @@ export default {
 h2 {
   margin: 0;
   font-size: 1.2em;
+
+  @include desktop {
+    margin-top: 0.5em;
+  }
 }
 
 h1 {
   margin: 0;
   margin-bottom: 0.5em;
+
+  @include desktop {
+    font-size: 2.5em;
+  }
 }
 
 p {
   font-size: 1.5em;
   line-height: 1.1em;
+
+  @include desktop {
+    margin: 0;
+    margin-bottom: 1em;
+  }
 }
 
 img {
   width: 100%;
   height: auto;
+
+  @include desktop {
+    padding-right: 2em;
+    width: calc(100% - 2em);
+  }
 }
 
 #buttons {
@@ -86,5 +104,37 @@ img {
 
 .secondary {
   background: $gradient-background;
+}
+
+@include desktop {
+  .container {
+    display: grid;
+    grid-template-areas:
+      "preview title"
+      "preview about"
+      "preview links";
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 100px 250px 100px;
+  }
+
+  #preview {
+    grid-area: preview;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #title {
+    grid-area: title;
+  }
+
+  #about {
+    grid-area: about;
+  }
+
+  #links {
+    grid-area: links;
+  }
 }
 </style>

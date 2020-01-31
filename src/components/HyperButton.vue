@@ -35,7 +35,10 @@ a {
   text-transform: uppercase;
 
   @include desktop {
-    width: 300px;
+    width: auto;
+    padding: 0.8em 2em;
+    margin-right: 0.7em;
+    font-size: 1em;
   }
 }
 
