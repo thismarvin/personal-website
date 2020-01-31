@@ -56,11 +56,13 @@ ul {
 
 li {
   color: #a6accd;
+  
+  @include desktop {
+    font-size: 1.5em;
+  }
 }
 
 .container {
-  margin: 0 $mobile-margin;
-
   display: flex;
   align-items: center;
   justify-content: center;
