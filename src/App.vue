@@ -29,7 +29,9 @@ export default {
           description:
             "Morro is a cross platform 2D game engine written in C# on top of the MonoGame Framework.",
           background:
-            "Morro is a passion project that is constantly being tweaked and improved. Morro mainly caters to 2D games, but it also can be used for any sort of creative visualizations."
+            "Morro is a passion project that is constantly being tweaked and improved. Morro mainly caters to 2D games, but it also can be used for any sort of creative visualizations.",
+          sourceCode: "https://github.com/thismarvin/morro",
+          projectPage: ""
         },
         {
           id: 1,
@@ -39,7 +41,9 @@ export default {
           description:
             "Quantum Caverns is a 2D Platformer written in Python using the Pygame library for the GameShell Game Jam (2019Q3).",
           background:
-            "Quantum Caverns was designed to run natively on the ClockworkPi GameShell, but you can run the game on any computer that has the latest version of Python and Pygame installed."
+            "Quantum Caverns was designed to run natively on the ClockworkPi GameShell, but you can run the game on any computer that has the latest version of Python and Pygame installed.",
+          sourceCode: "https://github.com/thismarvin/quantum-caverns",
+          projectPage: "https://team-am-squared.itch.io/quantum-caverns"
         },
         {
           id: 2,
@@ -49,7 +53,9 @@ export default {
           description:
             "Diner Mafia is a 2D RPG written in Python using the Pygame library for the GameShell Game Jam (2019Q2).",
           background:
-            "Diner Mafia was designed to run natively on the ClockworkPi GameShell, but you can run the game on any computer that has the latest version of Python and Pygame installed."
+            "Diner Mafia was designed to run natively on the ClockworkPi GameShell, but you can run the game on any computer that has the latest version of Python and Pygame installed.",
+          sourceCode: "https://github.com/austin0209/diner-mafia",
+          projectPage: "https://team-am-squared.itch.io/diner-mafia"
         },
         {
           id: 3,
@@ -59,7 +65,9 @@ export default {
           description:
             "Larry the Lightbulb is a 2D Platformer written in C# using the MonoGame Framework.",
           background:
-            "Larry the Lightbulb runs natively on Windows, and will run on MacOS and Linux if the Mono Framework is installed. Larry the Lightbulb is also available for free on iOS and Android!"
+            "Larry the Lightbulb runs natively on Windows, and will run on MacOS and Linux if the Mono Framework is installed. Larry the Lightbulb is also available for free on iOS and Android!",
+          sourceCode: "",
+          projectPage: "https://flourflo.itch.io/larry-the-lightbulb"
         }
       ]
     };

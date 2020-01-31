@@ -6,17 +6,23 @@
       <img :src="pathToPreview" alt="Project Preview" />
       <p>{{ entry.description }}</p>
       <p>{{ entry.background }}</p>
+      <div id="buttons">
+        <HyperButton :link="entry.sourceCode" callToAction="View Source Code" class="button" />
+        <HyperButton :link="entry.projectPage" callToAction="View Project Page" class="button" />
+      </div>
     </div>
     <Wave :id="waveID" :isSecondary="!isSecondaryEntry" />
   </div>
 </template>
 
 <script>
+import HyperButton from "./HyperButton.vue";
 import Wave from "./Wave.vue";
 
 export default {
   name: "ProjectEntry",
   components: {
+    HyperButton,
     Wave
   },
   props: {
@@ -64,6 +70,17 @@ img {
 #entry {
   padding: 1em;
   padding-bottom: 0;
+}
+
+#buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  margin-bottom: 0.5em;
 }
 
 .secondary {

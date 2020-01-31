@@ -14,19 +14,21 @@
         I’m Marvin, and I make games, websites, and software. I can help bring your ideas and designs to life
         through creative media.
       </p>
-      <a href="mailto:contact@thismarvin.com">Contact Me</a>
+      <HyperButton link="mailto:contact@thismarvin.com" callToAction="Contact Me" />
     </div>
-    <Wave id="wave-landing"/>
+    <Wave id="wave-landing" />
   </div>
 </template>
 
 <script>
+import HyperButton from "./HyperButton.vue";
 import Wave from "./Wave.vue";
 
 export default {
   name: "Landing",
   components: {
-    Wave
+    HyperButton,
+    Wave,
   }
 };
 </script>
@@ -47,18 +49,6 @@ p {
   text-align: center;
   font-size: 1.4em;
   line-height: 1.1em;
-}
-
-a {
-  background: transparent;
-  width: 80%;
-  padding: 1em;
-  border: 2px solid get-color(white);
-  border-radius: 3em;
-  text-decoration: none;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 #landing {
