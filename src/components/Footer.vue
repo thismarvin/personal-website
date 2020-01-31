@@ -3,7 +3,7 @@
     <footer>
       <ul>
         <li>
-          <span class="purple">let</span> contactInformation
+          <span class="purple">let</span> social
           <span class="blue">= {</span>
         </li>
         <li>
