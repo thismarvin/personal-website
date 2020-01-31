@@ -24,9 +24,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../scss/variables.scss";
+@import "../scss/mixins.scss";
+
 .wave {
   width: 100%;
   height: 25vw;
   transform: translateY(5px);
+
+  @include desktop {
+    height: 20em;
+  }
 }
 </style>
