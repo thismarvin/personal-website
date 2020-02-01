@@ -1,4 +1,6 @@
-export default class Wave {
+const p5 = require("p5");
+
+class Wave {
     /**    
      * Attaches a canvas that has a neat wave animation to a given element id.
      * Stay wavy 🌊🌊🌊. 
@@ -87,6 +89,8 @@ export default class Wave {
             }
         };
 
-        let myp5 = new p5(sketch, id);
+        new p5(sketch, id);
     }
 }
+
+module.exports.Wave = Wave;
