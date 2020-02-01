@@ -1,6 +1,6 @@
 # thismarvin's Personal Website
 
- a static website all about me and my projects that's deployed with the help of [Netlify](https://www.netlify.com/) ❤
+ a dynamic website all about me and my projects that's made with [Vue.js](https://vuejs.org/) and deployed with the help of [Netlify](https://www.netlify.com/) ❤
 
  Check out the website in all of its glory at [thismarvin.com](https://www.thismarvin.com)
 
