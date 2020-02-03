@@ -1,5 +1,5 @@
 <template>
-  <div :class="{secondary : isSecondaryEntry}">
+  <div class="entry" :class="{secondary : isSecondaryEntry}">
     <div class="container">
       <div id="title">
         <h2>{{ entry.subtitle }}</h2>
@@ -102,6 +102,10 @@ img {
     flex-direction: row;
     justify-content: flex-start;
   }
+}
+
+.entry {
+  padding-top: 0.75em;
 }
 
 .button {
