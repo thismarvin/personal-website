@@ -24,7 +24,7 @@ export default {
 
 a {
   background: transparent;
-  width: 80%;
+  width: 85%;
   padding: 0.8em;
   border: 2px solid get-color(white);
   border-radius: 3em;

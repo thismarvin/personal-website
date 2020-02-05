@@ -1,48 +1,31 @@
 <template>
-  <div class="entry" :class="{secondary : isSecondaryEntry}">
+  <div id="project-entry">
     <div class="container">
+      <div id="preview">
+        <img :src="pathToPreview" alt="Project Preview" />
+      </div>
       <div id="title">
         <h2>{{ entry.subtitle }}</h2>
         <h1>{{ entry.title }}</h1>
       </div>
-      <div id="preview">
-        <img :src="pathToPreview" alt="Project Preview" />
-      </div>
       <div id="about">
-        <p>{{ entry.description }}</p>
-        <p>{{ entry.background }}</p>
+        <p id="description">{{ entry.description }}</p>
       </div>
-      <div id="links">
-        <HyperButton :link="entry.sourceCode" callToAction="View Source Code" class="button" />
-        <HyperButton :link="entry.projectPage" callToAction="View Project Page" class="button" />
-      </div>
+      <div id="links"></div>
     </div>
-    <Wave :id="waveID" :isSecondary="!isSecondaryEntry" />
   </div>
 </template>
 
 <script>
-import HyperButton from "./HyperButton.vue";
-import Wave from "./Wave.vue";
-
 export default {
   name: "ProjectEntry",
-  components: {
-    HyperButton,
-    Wave
-  },
+  components: {},
   props: {
     entry: Object
   },
   computed: {
     pathToPreview: function() {
       return `/images/${this.entry.image}`;
-    },
-    waveID: function() {
-      return "wave-" + this.entry.title.split(" ")[0].toLowerCase();
-    },
-    isSecondaryEntry: function() {
-      return this.entry.id % 2 !== 0;
     }
   }
 };
@@ -56,6 +39,7 @@ export default {
 h2 {
   margin: 0;
   font-size: 1.2em;
+  color: #8a8a8a;
 
   @include desktop {
     margin-top: 0.5em;
@@ -64,7 +48,9 @@ h2 {
 
 h1 {
   margin: 0;
-  margin-bottom: 0.5em;
+
+  color: white;
+  //color:black;
 
   @include desktop {
     font-size: 2.5em;
@@ -72,8 +58,9 @@ h1 {
 }
 
 p {
-  font-size: 1.5em;
-  line-height: 1.1em;
+  margin-top: 0.25em;
+  color: #8a8a8a;
+//color: rgb(26, 26, 26);
 
   @include desktop {
     margin: 0;
@@ -84,9 +71,12 @@ p {
 img {
   width: 100%;
   height: auto;
+  padding-bottom: 1em;
+  margin-top: -5em;
 
   @include desktop {
     padding-right: 2em;
+    padding-bottom: 0;
     width: calc(100% - 2em);
   }
 }
@@ -104,8 +94,25 @@ img {
   }
 }
 
-.entry {
-  padding-top: 0.75em;
+#project-entry {
+  margin: 1em;
+  margin-top: 7em;
+  margin-bottom: 0;
+
+  border-radius: 1em;
+  //background: #242424;
+  //box-shadow: 0 0 10px black;
+
+  //background-color: #FFFFFF;
+  //box-shadow: 0 0 10px lightgray;
+}
+
+#preview {
+  margin-top: 5em;
+}
+
+#links {
+  padding-bottom: 1em;
 }
 
 .button {
@@ -113,7 +120,7 @@ img {
 }
 
 .secondary {
-  background: $gradient-background;
+  background-color: white;
 }
 
 @include desktop {

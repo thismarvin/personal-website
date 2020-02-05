@@ -16,19 +16,16 @@
       </p>
       <HyperButton link="mailto:contact@thismarvin.com" callToAction="Contact Me" />
     </div>
-    <Wave id="wave-landing" />
   </div>
 </template>
 
 <script>
 import HyperButton from "./HyperButton.vue";
-import Wave from "./Wave.vue";
 
 export default {
   name: "Landing",
   components: {
-    HyperButton,
-    Wave
+    HyperButton
   }
 };
 </script>
@@ -55,8 +52,6 @@ h1 {
 
 p {
   text-align: center;
-  font-size: 1.4em;
-  line-height: 1.1em;
 
   @include desktop {
     width: 500px;
@@ -64,10 +59,7 @@ p {
 }
 
 #landing {
-  background: linear-gradient(
-    get-color(gradient-start),
-    get-color(gradient-end)
-  );
+  background: $gradient-background;
 }
 
 .container {

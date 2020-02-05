@@ -1,6 +1,7 @@
 <template>
-  <div class="container">
-    <footer>
+  <div>
+    <Wave :id="wave-footer" :color="'#000000'" :backgroundColor="'#242424'" />
+    <footer class="container">
       <ul>
         <li>
           <span class="purple">let</span> social
@@ -34,8 +35,13 @@
 </template>
 
 <script>
+import Wave from "./Wave.vue";
+
 export default {
-  name: "Footer"
+  name: "Footer",
+  components: {
+    Wave
+  }
 };
 </script>
 
