@@ -58,10 +58,6 @@ p {
   }
 }
 
-#landing {
-  background: $gradient-background;
-}
-
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -70,5 +66,9 @@ p {
   justify-content: center;
   padding-top: calc(4 * var(--container-margin));
   padding-bottom: calc(2 * var(--container-margin));
+}
+
+#landing {
+  background: $gradient-background;
 }
 </style>

@@ -1,11 +1,10 @@
 <template>
-  <div id="collection">
-    <Wave :id="getWaveStartName" :color="getWaveColor" :backgroundColor="getWaveBackgroundColor" />
-    <div id="test" :class="{secondary : isSecondary}">
-      <div id="information" class="container">
-        <h2>Python + Pygame</h2>
-        <div id="line"></div>
-        <br />
+  <div class="collection">
+    <Wave :id="getWaveID" :color="getWaveColor" :backgroundColor="getWaveBackgroundColor" />
+    <div class="contents" :class="{alternate : isAlternate}">
+      <div class="container information">
+        <h2>{{ information.technologies }}</h2>
+        <hr />
         <h1>{{ information.header }}</h1>
         <p>{{ information.description }}</p>
         <br />
@@ -35,8 +34,8 @@ export default {
     return {};
   },
   computed: {
-    getWaveStartName: function() {
-      return `wave-start-${this.name}`;
+    getWaveID: function() {
+      return `wave-${this.name}`;
     },
 
     getWaveColor: function() {
@@ -47,7 +46,7 @@ export default {
       return this.information.waveTop;
     },
 
-    isSecondary: function() {
+    isAlternate: function() {
       return this.id % 2 !== 0;
     }
   }
@@ -63,43 +62,39 @@ h1 {
   margin: 0;
   margin-bottom: 0.5em;
 
-  color: white;
+  color: text-color(primary);;
 }
 
 h2 {
   font-size: 1.2em;
-  color: rgba(220, 220, 220, 0.75);
-}
-
-#line {
-  width: 100%;
-  height: 0.5em;
-  background: linear-gradient(
-    90deg,
-    get-color(gradient-start),
-    get-color(gradient-end)
-  );
+  color: text-color(secondary);
 }
 
 p {
   margin: 0;
-
-  color: rgba(220, 220, 220, 0.75);
+  color: text-color(secondary);
 }
 
-#collection {
-  background-color: black;
+hr {
+  width: 100%;
+  height: 0.5em;
+  border: 0;
+  background: linear-gradient(90deg, get-color(red), get-color(purple));
 }
 
-#test {
+.collection {
+  background-color: get-color(black);
+}
+
+.alternate {
+  background-color: get-color(darkgray);
+}
+
+.contents {
   padding-bottom: 1em;
 }
 
-.secondary {
-  background-color: #242424;
-}
-
-#information {
+.information {
   padding-top: 4em;
   padding-bottom: 1em;
 }

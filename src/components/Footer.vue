@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Wave :id="wave-footer" :color="'#000000'" :backgroundColor="'#242424'" />
+  <div id="footer">
+    <Wave :id="'wave-footer'" :color="'#000000'" :backgroundColor="'#242424'" />
     <footer class="container">
       <ul>
         <li>

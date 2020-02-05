@@ -1,10 +1,11 @@
 @import "./functions.scss";
 
 $palette: (white: #fff,
-  gray: #888,
+  gray: #8a8a8a,
+  darkgray: #242424,
   black: #000,
-  gradient-start: #ff004d,
-  gradient-end: #bd00ff);
+  red: #ff004d,
+  purple: #bd00ff);
 
 $text-color: (primary: get-color(white),
   secondary: get-color(gray),
@@ -32,5 +33,5 @@ $container-margin: 1em;
 $tablet-width: 500px;
 $desktop-width: 1000px;
 
-$gradient-background: linear-gradient(get-color(gradient-start),
-  get-color(gradient-end));
+$gradient-background: linear-gradient(get-color(red),
+  get-color(purple));

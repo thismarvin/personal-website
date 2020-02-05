@@ -1,18 +1,16 @@
 <template>
-  <div id="project-entry">
-    <div class="container">
-      <div id="preview">
-        <img :src="pathToPreview" alt="Project Preview" />
-      </div>
-      <div id="title">
-        <h2>{{ entry.subtitle }}</h2>
-        <h1>{{ entry.title }}</h1>
-      </div>
-      <div id="about">
-        <p id="description">{{ entry.description }}</p>
-      </div>
-      <div id="links"></div>
+  <div class="project-entry container">
+    <div class="preview">
+      <img :src="pathToPreview" alt="Project Preview" />
     </div>
+    <div class="title">
+      <h2>{{ entry.subtitle }}</h2>
+      <h1>{{ entry.title }}</h1>
+    </div>
+    <div class="about">
+      <p>{{ entry.description }}</p>
+    </div>
+    <div class="links"></div>
   </div>
 </template>
 
@@ -39,7 +37,7 @@ export default {
 h2 {
   margin: 0;
   font-size: 1.2em;
-  color: #8a8a8a;
+  color: text-color(secondary);
 
   @include desktop {
     margin-top: 0.5em;
@@ -48,9 +46,7 @@ h2 {
 
 h1 {
   margin: 0;
-
-  color: white;
-  //color:black;
+  color: text-color(primary);
 
   @include desktop {
     font-size: 2.5em;
@@ -59,8 +55,7 @@ h1 {
 
 p {
   margin-top: 0.25em;
-  color: #8a8a8a;
-//color: rgb(26, 26, 26);
+  color: text-color(secondary);
 
   @include desktop {
     margin: 0;
@@ -72,7 +67,6 @@ img {
   width: 100%;
   height: auto;
   padding-bottom: 1em;
-  margin-top: -5em;
 
   @include desktop {
     padding-right: 2em;
@@ -81,7 +75,26 @@ img {
   }
 }
 
-#links {
+.container {
+  margin: 0 2 * $container-margin;
+
+  @include desktop {
+    display: grid;
+    grid-template-areas:
+      "preview title"
+      "preview about"
+      "preview links";
+    grid-template-columns:
+      calc(500px - var(--container-margin))
+      calc(500px - var(--container-margin));
+  }
+}
+
+.button {
+  margin-bottom: 0.5em;
+}
+
+.links {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -94,49 +107,8 @@ img {
   }
 }
 
-#project-entry {
-  margin: 1em;
-  margin-top: 7em;
-  margin-bottom: 0;
-
-  border-radius: 1em;
-  //background: #242424;
-  //box-shadow: 0 0 10px black;
-
-  //background-color: #FFFFFF;
-  //box-shadow: 0 0 10px lightgray;
-}
-
-#preview {
-  margin-top: 5em;
-}
-
-#links {
-  padding-bottom: 1em;
-}
-
-.button {
-  margin-bottom: 0.5em;
-}
-
-.secondary {
-  background-color: white;
-}
-
 @include desktop {
-  .container {
-    display: grid;
-    grid-template-areas:
-      "preview title"
-      "preview about"
-      "preview links";
-    grid-template-columns:
-      calc(500px - var(--container-margin))
-      calc(500px - var(--container-margin));
-    //grid-template-rows: 100px 250px 100px;
-  }
-
-  #preview {
+  .preview {
     grid-area: preview;
 
     display: flex;
@@ -144,15 +116,15 @@ img {
     justify-content: center;
   }
 
-  #title {
+  .title {
     grid-area: title;
   }
 
-  #about {
+  .about {
     grid-area: about;
   }
 
-  #links {
+  .links {
     grid-area: links;
   }
 }

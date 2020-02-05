@@ -1,9 +1,6 @@
 <template>
   <div id="website">
-    <div id="landing">
-      <Landing />
-    </div>
-
+    <Landing />
     <div id="collections">
       <ProjectCollection
         v-for="collection of collections"
@@ -14,10 +11,7 @@
         :entries="collection.entries"
       />
     </div>
-
-    <div id="footer">
-      <Footer />
-    </div>
+    <Footer />
   </div>
 </template>
 
@@ -26,7 +20,7 @@ import Landing from "./components/Landing.vue";
 import ProjectCollection from "./components/ProjectCollection.vue";
 import Footer from "./components/Footer.vue";
 
-import { collectionGameJams, collectionCSharp, collectionGameJams1, collectionCSharp1 } from "./modules/data.mjs";
+import { collectionGameJams, collectionCSharp } from "./modules/data.mjs";
 
 export default {
   name: "app",
@@ -38,7 +32,7 @@ export default {
   data() {
     return {
       id: 0,
-      collections: [collectionGameJams, collectionCSharp, collectionGameJams1, collectionCSharp1]
+      collections: [collectionGameJams, collectionCSharp]
     };
   },
   methods: {
@@ -67,7 +61,7 @@ body {
 
 * {
   font-family: "Roboto", sans-serif;
-  color: white;
+  color: text-color(primary);
 }
 
 p {
