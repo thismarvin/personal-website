@@ -9,15 +9,13 @@ export default {
   name: "Wave",
   props: {
     id: String,
-    isSecondary: Boolean
+    color: String,
+    backgroundColor: String
   },
   mounted: function() {
     this.$nextTick(function() {
-      if (!this.isSecondary) {
-        new Wave(this.id, 0.5, 0.3, "#000000");
-      } else {
-        new Wave(this.id, 0.5, 0.3, "#FF004D");
-      }
+      const backgroundColor = this.backgroundColor === undefined ? "None" : this.backgroundColor;
+      new Wave(this.id, 0.5, 0.3, this.color, backgroundColor);
     });
   }
 };
@@ -30,7 +28,6 @@ export default {
 .wave {
   width: 100%;
   height: 25vw;
-  transform: translateY(5px);
 
   @include tablet {
     height: 8em;

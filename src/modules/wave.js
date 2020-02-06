@@ -9,11 +9,12 @@ class Wave {
      * @param {number} span a perctange (represented as a decimal) of how far the wave should span up and down
      * @param {string} color the hexadecimal representation of the desired color of the wave
      */
-    constructor(id, startOffset, span, color) {
+    constructor(id, startOffset, span, color, backgroundColor = "None") {
 
         this.waveStartOffset = startOffset;
         this.waveHeight = span;
         this.waveColor = color;
+        this.backgroundColor = backgroundColor;
 
         const attachedDiv = document.querySelector(`#${id}`);
         const instance = this;
@@ -57,7 +58,12 @@ class Wave {
                     return;
                 }
 
-                p5.clear();
+                if (instance.backgroundColor === "None") {
+                    p5.clear();
+
+                } else {
+                    p5.background(instance.backgroundColor);
+                }
 
                 p5.beginShape();
                 p5.fill(instance.waveColor);
