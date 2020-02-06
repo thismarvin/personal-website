@@ -66,11 +66,11 @@ p {
 img {
   width: 100%;
   height: auto;
-  padding-bottom: 1em;
+  margin-bottom: 1em;
 
   @include desktop {
     padding-right: 2em;
-    padding-bottom: 0;
+    margin-bottom: 0;
     width: calc(100% - 2em);
   }
 }
