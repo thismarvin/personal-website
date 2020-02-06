@@ -67,7 +67,7 @@ h1 {
 
 h2 {
   font-size: 1.2em;
-  color: text-color(secondary);
+  color: text-color(tertiary);
 }
 
 p {

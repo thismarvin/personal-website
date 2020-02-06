@@ -1,6 +1,7 @@
 @import "./functions.scss";
 
 $palette: (white: #fff,
+lighterwhite:#c8c8c8,
   gray: #8a8a8a,
   darkgray: #242424,
   black: #000,
@@ -8,7 +9,8 @@ $palette: (white: #fff,
   purple: #bd00ff);
 
 $text-color: (primary: get-color(white),
-  secondary: get-color(gray),
+secondary: get-color(lighterwhite),
+  tertiary: get-color(gray),
 );
 
 @font-face {
