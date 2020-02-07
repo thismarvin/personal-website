@@ -80,7 +80,7 @@ collectionCSharp.setInformation({
 collectionCSharp.addEntry({
     title: "Morro",
     subtitle: "game engine",
-    image: "me_preview.png",
+    image: "morro.gif",
     description: "Morro is an open-source cross platform 2D game engine written in C# on top of the MonoGame Framework.",
     background: "Morro is a passion project that is constantly being tweaked and improved. Morro mainly caters to 2D games, but it can also be used for any sort of creative visualizations.",
     sourceCode: "https://github.com/thismarvin/morro",
