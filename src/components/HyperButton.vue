@@ -1,5 +1,10 @@
 <template>
-  <a :href="link" :class="{invalid: isInvalidLink}">{{callToAction}}</a>
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    :href="link"
+    :class="{invalid: isInvalidLink}"
+  >{{callToAction}}</a>
 </template>
 
 <script>
