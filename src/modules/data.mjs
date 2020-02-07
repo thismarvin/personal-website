@@ -24,7 +24,8 @@ class ProjectCollection {
     }
 }
 
-export const collectionGameJams = new ProjectCollection("gamejams");
+//#region Game Jam Collection
+const collectionGameJams = new ProjectCollection("gamejams");
 
 collectionGameJams.setInformation({
     technologies: "Python + Pygame",
@@ -63,8 +64,10 @@ collectionGameJams.addEntry({
     sourceCode: "https://github.com/austin0209/diner-mafia",
     projectPage: "https://team-am-squared.itch.io/diner-mafia",
 });
+//#endregion
 
-export const collectionCSharp = new ProjectCollection("csharp");
+//#region C# Collection
+const collectionCSharp = new ProjectCollection("csharp");
 
 collectionCSharp.setInformation({
     technologies: "C# + MonoGame",
@@ -103,3 +106,6 @@ collectionCSharp.addEntry({
     sourceCode: "",
     projectPage: "https://flourflo.itch.io/larry-the-lightbulb"
 });
+//#endregion
+
+export const collections = [collectionGameJams, collectionCSharp];
