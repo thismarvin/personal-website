@@ -126,16 +126,11 @@ span {
   padding: 1em 0;
   background: transparent;
 
+  @include tablet {
+    margin: 0 auto;
+  }
+
   @include desktop {
-    //display: grid;
-    //grid-template-areas:
-    //  "preview title"
-    //  "preview revealer"
-    //  "preview about"
-    //  "preview links";
-    //grid-template-columns:
-    //  calc(500px - var(--container-margin))
-    //  calc(500px - var(--container-margin));
     margin: 0 auto;
     padding: 0;
     padding-bottom: 1em;
@@ -195,37 +190,9 @@ span {
   color: rgba(255, 255, 255, 0.85);
 }
 
-.desktop-only {
-  display: none;
-}
-
 @include desktop {
-  .mobile-only {
-    display: none;
-  }
-
-  .desktop-only {
-    display: block;
-  }
-
-  .preview {
-    grid-area: preview;
-    //display: flex;
-    //align-items: center;
-    //justify-content: center;
-  }
-
-  .title {
-    grid-area: title;
-  }
-
   .about {
-    grid-area: about;
     height: 350px;
-  }
-
-  .links {
-    grid-area: links;
   }
 }
 
