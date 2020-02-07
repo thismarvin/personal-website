@@ -3,13 +3,20 @@
     <Wave :id="getWaveID" :color="getWaveColor" :backgroundColor="getWaveBackgroundColor" />
     <div class="contents" :class="{alternate : isAlternate}">
       <div class="container information">
-        <h2>{{ information.technologies }}</h2>
-        <hr />
+        <h2 :style="[{color: isAlternate ? 'rgba(255, 255, 255, 0.85)' : ''}]">{{ information.technologies }}</h2>
+        <hr :style="[{background: isAlternate ? 'linear-gradient(90deg, #FFF, #bd00ff)' : ''}]"/>
         <h1>{{ information.header }}</h1>
-        <p>{{ information.description }}</p>
+        <p :style="[{color: isAlternate ? 'rgba(255, 255, 255, 0.85)' : ''}]">{{ information.description }}</p>
         <br />
       </div>
-      <ProjectEntry v-for="entry of entries" v-bind:key="entry.id" v-bind:entry="entry" />
+      <div class="entries">
+        <ProjectEntry
+          v-for="entry of entries"
+          v-bind:key="entry.id"
+          :entry="entry"
+          :isAlternate="isAlternate"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -62,12 +69,12 @@ h1 {
   margin: 0;
   margin-bottom: 0.5em;
 
-  color: text-color(primary);;
+  color: text-color(primary);
 }
 
 h2 {
   font-size: 1.2em;
-  color: text-color(secondary);
+  color: text-color(tertiary);
 }
 
 p {
@@ -87,7 +94,8 @@ hr {
 }
 
 .alternate {
-  background-color: get-color(darkgray);
+  //background-color: get-color(darkgray);
+  background: $gradient-background;
 }
 
 .contents {
@@ -97,5 +105,16 @@ hr {
 .information {
   padding-top: 4em;
   padding-bottom: 1em;
+}
+
+@include desktop {
+  .entries {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 </style>

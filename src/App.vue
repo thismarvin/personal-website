@@ -20,7 +20,7 @@ import Landing from "./components/Landing.vue";
 import ProjectCollection from "./components/ProjectCollection.vue";
 import Footer from "./components/Footer.vue";
 
-import { collectionGameJams, collectionCSharp } from "./modules/data.mjs";
+import { collections } from "./modules/data.mjs";
 
 export default {
   name: "app",
@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       id: 0,
-      collections: [collectionGameJams, collectionCSharp]
+      collections: collections
     };
   },
   methods: {

@@ -1,6 +1,6 @@
 <template>
   <div id="footer">
-    <Wave :id="'wave-footer'" :color="'#000000'" :backgroundColor="'#242424'" />
+    <Wave :id="'wave-footer'" :color="'#000000'" :backgroundColor="'#bd00ff'" />
     <footer class="container">
       <ul>
         <li>
@@ -67,7 +67,7 @@ li {
     font-size: 1.2em;
   }
   @include desktop {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 }
 
