@@ -7,31 +7,29 @@
       <h2>{{ entry.subtitle }}</h2>
       <h1>{{ entry.title }}</h1>
     </div>
-    <div class="about">
-      <div class="reveal" @click="toggleReveal">
-        <span>Show {{ moreInfoRevealed ? "Less" : "More" }}</span>
-        <svg
-          viewBox="0 0 100 100"
-          class="arrow"
-          :class="[{'start-turn-up': moreInfoRevealed}, {'start-turn-down': !moreInfoRevealed}]"
-        >
-          <g>
-            <path d="M5 34.69L49.75 80.22L95 34.69L79.59 19.78L49.75 50.6L19.92 19.78L5 34.69Z" />
-          </g>
-        </svg>
-      </div>
-
-      <transition appear name="reveall" v-if="moreInfoRevealed">
-        <div class="more-info">
-          <p>{{ entry.description }}</p>
-          <p>{{ entry.background }}</p>
-          <div class="links">
-            <HyperButton :link="entry.sourceCode" callToAction="View Source Code" class="button" />
-            <HyperButton :link="entry.projectPage" callToAction="View Project Page" class="button" />
-          </div>
-        </div>
-      </transition>
+    <div class="revealer" @click="toggleReveal">
+      <span>Show {{ moreInfoRevealed ? "Less" : "More" }}</span>
+      <svg
+        viewBox="0 0 100 100"
+        class="arrow"
+        :class="[{'start-turn-up': moreInfoRevealed}, {'start-turn-down': !moreInfoRevealed}]"
+      >
+        <g>
+          <path d="M5 34.69L49.75 80.22L95 34.69L79.59 19.78L49.75 50.6L19.92 19.78L5 34.69Z" />
+        </g>
+      </svg>
     </div>
+
+    <transition appear name="reveal" v-if="moreInfoRevealed">
+      <div class="about">
+        <p>{{ entry.description }}</p>
+        <p>{{ entry.background }}</p>
+        <div class="links">
+          <HyperButton :link="entry.sourceCode" callToAction="View Source Code" class="button" />
+          <HyperButton :link="entry.projectPage" callToAction="View Project Page" class="button" />
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -81,6 +79,7 @@ h2 {
 
   @include desktop {
     margin-top: 0.5em;
+    font-size: 1em;
   }
 }
 
@@ -88,7 +87,7 @@ h1 {
   margin: 0;
 
   @include desktop {
-    font-size: 2.5em;
+    font-size: 1.5em;
   }
 }
 
@@ -98,6 +97,8 @@ p {
   @include desktop {
     margin: 0;
     margin-bottom: 1em;
+    font-size: 1em;
+    line-height: 1.4em;
   }
 }
 
@@ -107,14 +108,16 @@ img {
   margin-bottom: 1em;
 
   @include desktop {
-    padding-right: 2em;
     margin-bottom: 0;
-    width: calc(100% - 2em);
+    width: 300px;
   }
 }
 
 span {
   color: text-color(tertiary);
+  @include desktop {
+    font-size: 0.75em;
+  }
 }
 
 .container {
@@ -122,21 +125,31 @@ span {
   padding: 1em 0;
 
   @include desktop {
-    display: grid;
-    grid-template-areas:
-      "preview title"
-      "preview about"
-      "preview links";
-    grid-template-columns:
-      calc(500px - var(--container-margin))
-      calc(500px - var(--container-margin));
+    //display: grid;
+    //grid-template-areas:
+    //  "preview title"
+    //  "preview revealer"
+    //  "preview about"
+    //  "preview links";
+    //grid-template-columns:
+    //  calc(500px - var(--container-margin))
+    //  calc(500px - var(--container-margin));
+    margin: 0 auto;
+    padding: 0;
+    padding-bottom: 1em;
+    width: 300px;
   }
 }
 
-.reveal {
+.revealer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include desktop {
+    margin-bottom: 1em;
+    grid-area: revealer;
+  }
 }
 
 .arrow {
@@ -150,9 +163,13 @@ span {
   transition: transform;
 }
 
-.more-info {
+.about {
   padding: 0 1em;
   transition: opacity;
+
+  @include desktop {
+    padding: 0;
+  }
 }
 
 .button {
@@ -172,13 +189,24 @@ span {
   }
 }
 
+.desktop-only {
+  display: none;
+}
+
 @include desktop {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+
   .preview {
     grid-area: preview;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
   }
 
   .title {
@@ -202,11 +230,11 @@ span {
   animation: turn-down 0.5s ease forwards;
 }
 
-.reveall-enter-active {
+.reveal-enter-active {
   animation: fade-in 0.25s ease forwards;
 }
 
-.reveall-leave-active {
+.reveal-leave-active {
   animation: fade-in 0.15s ease reverse;
 }
 

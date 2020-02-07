@@ -9,7 +9,9 @@
         <p>{{ information.description }}</p>
         <br />
       </div>
-      <ProjectEntry v-for="entry of entries" v-bind:key="entry.id" v-bind:entry="entry" />
+      <div class="entries">
+        <ProjectEntry v-for="entry of entries" v-bind:key="entry.id" v-bind:entry="entry" />
+      </div>
     </div>
   </div>
 </template>
@@ -62,7 +64,7 @@ h1 {
   margin: 0;
   margin-bottom: 0.5em;
 
-  color: text-color(primary);;
+  color: text-color(primary);
 }
 
 h2 {
@@ -97,5 +99,16 @@ hr {
 .information {
   padding-top: 4em;
   padding-bottom: 1em;
+}
+
+@include desktop {
+  .entries {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 </style>
