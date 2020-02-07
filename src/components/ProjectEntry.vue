@@ -4,11 +4,11 @@
       <img :src="pathToPreview" alt="Project Preview" />
     </div>
     <div class="title">
-      <h2>{{ entry.subtitle }}</h2>
+      <h2 :class="{'alternate-color': isAlternate}">{{ entry.subtitle }}</h2>
       <h1>{{ entry.title }}</h1>
     </div>
     <div class="revealer" @click="toggleReveal">
-      <span>Show {{ moreInfoRevealed ? "Less" : "More" }}</span>
+      <span :class="{'alternate-color': isAlternate}">Show {{ moreInfoRevealed ? "Less" : "More" }}</span>
       <svg
         viewBox="0 0 100 100"
         class="arrow"
@@ -22,8 +22,8 @@
 
     <transition appear name="reveal" v-if="moreInfoRevealed">
       <div class="about">
-        <p>{{ entry.description }}</p>
-        <p>{{ entry.background }}</p>
+        <p :class="{'alternate-color': isAlternate}">{{ entry.description }}</p>
+        <p :class="{'alternate-color': isAlternate}">{{ entry.background }}</p>
         <div class="links">
           <HyperButton :link="entry.sourceCode" callToAction="View Source Code" class="button" />
           <HyperButton :link="entry.projectPage" callToAction="View Project Page" class="button" />
@@ -42,7 +42,8 @@ export default {
     HyperButton
   },
   props: {
-    entry: Object
+    entry: Object,
+    isAlternate: Boolean
   },
   data() {
     return {
@@ -116,13 +117,14 @@ img {
 span {
   color: text-color(tertiary);
   @include desktop {
-    font-size: 0.75em;
+    font-size: 0.9em;
   }
 }
 
 .container {
   margin: 0 2 * $container-margin;
   padding: 1em 0;
+  background: transparent;
 
   @include desktop {
     //display: grid;
@@ -189,6 +191,10 @@ span {
   }
 }
 
+.alternate-color {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .desktop-only {
   display: none;
 }
@@ -215,6 +221,7 @@ span {
 
   .about {
     grid-area: about;
+    height: 350px;
   }
 
   .links {

@@ -74,7 +74,7 @@ collectionCSharp.setInformation({
     header: "C# Projects",
     description: "Throughout the years I have created many prototypes using various C# libraries and frameworks. With the integration of the MonoGame Framework, I have created some projects worth checking out.",
     waveTop: "#000000",
-    waveBottom: "#242424"
+    waveBottom: "#ff004d"
 });
 
 collectionCSharp.addEntry({
