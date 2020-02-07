@@ -46,7 +46,7 @@ h1 {
   }
 
   @include desktop {
-    font-size: 8em;
+    font-size: 5em;
   }
 }
 
@@ -54,7 +54,7 @@ p {
   text-align: center;
 
   @include desktop {
-    width: 500px;
+    width: 350px;
   }
 }
 
