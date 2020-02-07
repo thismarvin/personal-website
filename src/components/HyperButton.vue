@@ -36,9 +36,10 @@ a {
 
   @include desktop {
     width: auto;
-    padding: 0.8em 2em;
+    padding: 0.5em 1em;
     margin-right: 0.7em;
     font-size: 1em;
+    border-radius: 0;
   }
 }
 
