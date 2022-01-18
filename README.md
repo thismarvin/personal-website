@@ -1,9 +1,5 @@
 # thismarvin's Personal Website
 
- a static website all about me and my projects that's made with [Vue.js](https://vuejs.org/) and deployed with the help of [Netlify](https://www.netlify.com/) ❤
+This project has been superseded by [www](https://github.com/thismarvin/www); make sure to check it out!
 
- Check out the website in all of its glory at [thismarvin.com](https://www.thismarvin.com)
-
-## Status
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ab81ddf0-3238-45cd-88d3-506e8ef36536/deploy-status)](https://app.netlify.com/sites/thismarvin/deploys)
+a static website all about me and my projects that's made with [Vue.js](https://vuejs.org/) and deployed with the help of [Netlify](https://www.netlify.com/)
